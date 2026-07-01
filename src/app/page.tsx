@@ -11,8 +11,8 @@ export default function Home() {
           <div className="hero">
             <div className="hero-bg">
               <picture>
-                <source media="(max-width: 860px)" srcSet="https://invest.communecapital.com/hubfs/COMMUNE/v7-livecall-staging/livecall-hero-mobile.jpg" />
-                <img src="https://invest.communecapital.com/hubfs/COMMUNE/v7-livecall-staging/livecall-hero-desktop.jpg" alt="Michael Michalov and Mikey Taylor recording the COMMUNE live call in the studio" />
+                <source media="(max-width: 860px)" srcSet=src="/images/rift-hero-banner-1.png"  />
+                <img src="/images/rift-hero-banner-1.png" alt="Two subjects at a conference table discussing Applied AI" />
               </picture>
             </div>
             <div className="hero-scrim" />
