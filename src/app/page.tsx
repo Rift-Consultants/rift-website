@@ -3,7 +3,14 @@ export default function Home() {
     <>
       <header className="topbar">
         <div className="topbar-inner">
-          <div className="wordmark">Rift <span>Consultants</span></div>
+          <a className="wordmark" href="#top" aria-label="Rift Consultants home">Rift <span>Consultants</span></a>
+          <nav className="main-nav" aria-label="Primary navigation">
+            <a href="/services">Services</a>
+            <a href="/industries">Industries</a>
+            <a href="/events">Events</a>
+            <a href="/about">About</a>
+          </nav>
+          <a className="nav-cta" href="#reserve">Book a call</a>
         </div>
       </header>
       <main id="top">
