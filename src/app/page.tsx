@@ -3,7 +3,7 @@ export default function Home() {
     <>
       <header className="topbar">
         <div className="topbar-inner">
-          <div className="wordmark">Commune <span>Capital</span></div>
+          <div className="wordmark">Rift <span>Consultants</span></div>
         </div>
       </header>
       <main id="top">
@@ -20,7 +20,7 @@ export default function Home() {
               <div className="hero-copy reveal">
                 <span className="hero-locator"><span className="dot" />Live · Wednesdays 5pm PT</span>
                 <span className="eyebrow">Commune Capital · OMNI Fund</span>
-                <h1>Real estate ownership. <em>Finally for everyone.</em><a className="foot-ref" href="#eligibility" aria-label="See investor eligibility disclaimer">*</a></h1>
+                <h1>Build and Deploy AI systems. <em>For Leadership teams.</em><a className="foot-ref" href="#eligibility" aria-label="See investor eligibility disclaimer">*</a></h1>
                 <p className="sub">Join us live every Wednesday at 5pm PT to learn more. Reserve your seat below.</p>
                 <p className="hero-fineprint">*Only persons satisfying the investor eligibility standards may subscribe for an interest in Omni. Please see the offering statement for eligibility information.</p>
               </div>
