@@ -11,7 +11,7 @@ export default function Home() {
           <div className="hero">
             <div className="hero-bg">
               <picture>
-                <source media="(max-width: 860px)" srcSet=src="/images/rift-hero-banner-1.png"  />
+                <source media="(max-width: 860px)" srcSet="/images/rift-hero-banner-1.png"  />
                 <img src="/images/rift-hero-banner-1.png" alt="Two subjects at a conference table discussing Applied AI" />
               </picture>
             </div>
