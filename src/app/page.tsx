@@ -56,7 +56,7 @@ export default function Home() {
             <div className="webinar-copy">
               <span className="eyebrow">LIVE WEBINAR</span>
               <h2>IT&rsquo;s Time to Build:<br /><em>Your First IT Agent</em></h2>
-              <p>Join Rift Consultants for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
+              <p className="body">Join Rift Consultants for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
               <div className="speaker-row" aria-label="Webinar speakers">
                 <div className="speaker-item">
                   <span className="speaker-avatar" aria-hidden="true">RC</span>
@@ -100,7 +100,7 @@ export default function Home() {
                 <span>I agree to receive webinar reminders and related resources from Rift Consultants.</span>
               </label>
               <p className="webinar-terms">By registering, you agree to receive communications about this event. Your information will be handled in accordance with our privacy practices, and you can unsubscribe at any time.</p>
-              <button type="submit">Register Now</button>
+              <button className="btn" type="submit">Register Now</button>
             </form>
           </div>
         </section>
