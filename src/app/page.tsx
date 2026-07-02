@@ -45,11 +45,11 @@ export default function Home() {
                 <div className="logo-wall" aria-label="Technologies we work with">
                   <p className="logo-wall-label">Technologies we work with</p>
                   <div className="logo-wall-grid">
-                    <Image src="/images/logos/chatgpt.png" alt="ChatGPT" width={120} height={40} />
-                    <Image src="/images/logos/claude.png" alt="Claude" width={120} height={40} />
-                    <Image src="/images/logos/gemini.png" alt="Gemini" width={120} height={40} />
-                    <Image src="/images/logos/wispr.png" alt="Wispr" width={120} height={40} />
-                    <Image src="/images/logos/microsoft.png" alt="Microsoft" width={120} height={40} />
+                    <Image src="/images/logos/chatgpt-text.png" alt="ChatGPT" width={120} height={40} />
+                    <Image src="/images/logos/claude-text.png" alt="Claude" width={120} height={40} />
+                    <Image src="/images/logos/gemini-text.png" alt="Gemini" width={120} height={40} />
+                    <Image src="/images/logos/wispr-text.png" alt="Wispr" width={120} height={40} />
+                    <Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={120} height={40} />
                   </div>
                 </div>
               </div>
