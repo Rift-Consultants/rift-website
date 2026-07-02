@@ -1,9 +1,18 @@
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <>
       <header className="topbar">
         <div className="topbar-inner">
-          <div className="wordmark">Rift <span>Consultants</span></div>
+          <a className="wordmark" href="#top" aria-label="Rift Consultants home">Rift <span>Consultants</span></a>
+          <nav className="main-nav" aria-label="Primary navigation">
+            <a href="/services">Services</a>
+            <a href="/industries">Industries</a>
+            <a href="/events">Events</a>
+            <a href="/about">About</a>
+          </nav>
+          <a className="nav-cta" href="#reserve">Book a call</a>
         </div>
       </header>
       <main id="top">
@@ -33,7 +42,16 @@ export default function Home() {
                   <h3 id="hs_cos_wrapper_form_991479870_title" className="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text" />
                   <div id="hs_form_target_form_991479870" className="hs-form-html" data-form-id="92c80c30-5e96-4801-b771-46ebf47b902d" data-portal-id="39849130" data-region="na2" />
                 </span>
-                <div className="form-foot">Your information is used to send the join link and call reminders.</div>
+                <div className="logo-wall" aria-label="Technologies we work with">
+                  <p className="logo-wall-label">Technologies we work with</p>
+                  <div className="logo-wall-grid">
+                    <Image src="/images/logos/chatgpt-text.png" alt="ChatGPT" width={120} height={40} />
+                    <Image src="/images/logos/claude-text.png" alt="Claude" width={120} height={40} />
+                    <Image src="/images/logos/gemini-text.png" alt="Gemini" width={120} height={40} />
+                    <Image src="/images/logos/wispr-text.png" alt="Wispr" width={120} height={40} />
+                    <Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={120} height={40} />
+                  </div>
+                </div>
               </div>
               <div className="confirm-card" data-screen-label="Confirmation state">
                 <span className="eyebrow">Confirmed</span>
@@ -44,14 +62,57 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="stats" data-screen-label="Stats strip">
-          <div className="shell">
-            <div className="stats-grid">
-              <div className="stat"><div className="stat-n">600+</div><div className="stat-l">Investors</div></div>
-              <div className="stat"><div className="stat-n">$352M+</div><div className="stat-l">Assets managed</div></div>
-              <div className="stat"><div className="stat-n">27</div><div className="stat-l">Years experience</div></div>
+        <section className="webinar" data-screen-label="Webinar registration">
+          <div className="shell webinar-shell">
+            <div className="webinar-copy">
+              <span className="eyebrow">LIVE WEBINAR</span>
+              <h2>IT&rsquo;s Time to Build:<br /><em>Your First IT Agent</em></h2>
+              <p className="body">Join Rift Consultants for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
+              <div className="speaker-row" aria-label="Webinar speakers">
+                <div className="speaker-item">
+                  <span className="speaker-avatar" aria-hidden="true">RC</span>
+                  <div>
+                    <strong>Rift Consultants</strong>
+                    <span>Applied AI Strategy Team</span>
+                  </div>
+                </div>
+                <div className="speaker-item">
+                  <span className="speaker-avatar" aria-hidden="true">IT</span>
+                  <div>
+                    <strong>IT Agent Lab</strong>
+                    <span>Implementation Specialists</span>
+                  </div>
+                </div>
+              </div>
+              <div className="webinar-date">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M7 2v3M17 2v3M4 9h16M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
+                </svg>
+                <span>July 1, 2026 · 9:00 - 9:30 AM PT</span>
+              </div>
             </div>
-            <p className="footnote">The figures shown including years, total assets, number of projects, and investor count, represent aggregated data across all investment vehicles managed by Commune Capital or its predecessors during the stated time frame, calculated as of 3/31/26.</p>
+            <form className="webinar-card">
+              <div className="field-grid">
+                <label>
+                  <span>First name</span>
+                  <input type="text" name="firstName" autoComplete="given-name" />
+                </label>
+                <label>
+                  <span>Last name</span>
+                  <input type="text" name="lastName" autoComplete="family-name" />
+                </label>
+              </div>
+              <label>
+                <span>Work email</span>
+                <input type="email" name="email" autoComplete="email" />
+              </label>
+              <label className="consent-row">
+                <input type="checkbox" name="marketingConsent" defaultChecked />
+                <span>I agree to receive webinar reminders and related resources from Rift Consultants.</span>
+              </label>
+              <p className="webinar-terms">By registering, you agree to receive communications about this event. Your information will be handled in accordance with our privacy practices, and you can unsubscribe at any time.</p>
+              <button className="btn" type="submit">Register Now</button>
+            </form>
           </div>
         </section>
         <section className="featured" data-screen-label="Featured property">
