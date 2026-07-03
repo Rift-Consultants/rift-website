@@ -10,7 +10,9 @@ export default function Home() {
             <a href="/services">Services</a>
             <a href="/industries">Industries</a>
             <a href="/events">Events</a>
+            <a href="/about">Pricing</a>
             <a href="/about">About</a>
+            <a href="/about">FAQs</a>
           </nav>
           <a className="nav-cta" href="#reserve">Book a call</a>
         </div>
