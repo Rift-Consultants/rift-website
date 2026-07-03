@@ -117,14 +117,62 @@ export default function Home() {
             </form>
           </div>
         </section>
-        <section className="featured" data-screen-label="Featured property">
-          <div className="featured-media"><img src="https://invest.communecapital.com/hubfs/COMMUNE/images/ventura-rendering.jpg" alt="Rendering of the targeted coastal multifamily property in Ventura, California" loading="lazy" /></div>
+        <section className="featured learn-section" data-screen-label="What you'll learn">
+          <div className="shell learn-shell">
+            <div className="featured-copy learn-copy">
+              <h2>What you&rsquo;ll learn</h2>
+              <div className="learn-list">
+                <div className="learn-item">
+                  <span className="learn-check" aria-hidden="true">✓</span>
+                  <div>
+                    <h3>Identify your highest-value agentic AI use case</h3>
+                    <p>Map the pain points, workflows, and strategic opportunities where AI agents can create the biggest operational impact for your organization.</p>
+                  </div>
+                </div>
+                <div className="learn-item">
+                  <span className="learn-check" aria-hidden="true">✓</span>
+                  <div>
+                    <h3>Design an agent-first workflow</h3>
+                    <p>Apply the AGENT framework to redesign a workflow for autonomous operation, human-agent collaboration, governance checkpoints, and technical handoff.</p>
+                  </div>
+                </div>
+                <div className="learn-item">
+                  <span className="learn-check" aria-hidden="true">✓</span>
+                  <div>
+                    <h3>Prepare an implementation brief for your team</h3>
+                    <p>Leave with a practical roadmap covering build-vs-buy recommendations, vendor evaluation criteria, risk controls, resource requirements, and success metrics.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="learn-visual" aria-label="AI assistant workflow preview">
+              <div className="assistant-card">
+                <h3>What can I help you build?</h3>
+                <p>Describe the workflow you want to redesign, and we&rsquo;ll map the agent step by step.</p>
+                <div className="assistant-input">Identify our highest-value agentic AI use case <span>↑</span></div>
+                <div className="suggestion-row" aria-hidden="true">
+                  <span>Map pain points</span>
+                  <span>Draft agent workflow</span>
+                  <span>Create implementation brief</span>
+                </div>
+                <div className="playbook-grid" aria-hidden="true">
+                  <div><strong>Use Case Canvas</strong><small>Impact + feasibility</small></div>
+                  <div><strong>Workflow Map</strong><small>Human-agent roles</small></div>
+                  <div><strong>Governance Plan</strong><small>Controls + approvals</small></div>
+                  <div><strong>Technical Brief</strong><small>Ready for engineering</small></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section className="featured consulting-section" data-screen-label="Consulting services">
+          <div className="featured-media"><img src="https://invest.communecapital.com/hubfs/COMMUNE/images/ventura-rendering.jpg" alt="Applied AI consulting team working through an enterprise deployment plan" loading="lazy" /></div>
           <div className="shell"><div className="featured-copy">
-            <span className="eyebrow">Featured this week</span>
-            <h2>A property we just targeted in Ventura, California.</h2>
-            <div className="prop-tag">Ventura, CA · Coastal multifamily</div>
-            <p className="body">Constrained coastal supply. Persistent demand. A submarket with inadequate housing production. We walk through deals like this on the call.</p>
-            <div className="sec-cta"><a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat <span className="arr">→</span></a></div>
+            <span className="eyebrow">Consulting</span>
+            <h2>Build AI agents your team can rely on every day.</h2>
+            <div className="prop-tag">AI agent strategy · deployment consulting</div>
+            <p className="body">We work with leaders, operators, and frontline teams to identify where agents can make the biggest impact, redesign critical workflows around intelligence, and deploy durable systems connected to your data, tools, controls, and business processes.</p>
+            <div className="sec-cta"><a className="btn" href="#reserve" data-anchor-cta="">Book a call <span className="arr">→</span></a></div>
           </div></div>
         </section>
         <section className="format" data-screen-label="Format">
