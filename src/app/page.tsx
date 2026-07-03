@@ -169,7 +169,7 @@ export default function Home() {
           <div className="featured-media"><img src="https://invest.communecapital.com/hubfs/COMMUNE/images/ventura-rendering.jpg" alt="Applied AI consulting team working through an enterprise deployment plan" loading="lazy" /></div>
           <div className="shell"><div className="featured-copy">
             <span className="eyebrow">Consulting</span>
-            <h2>Build AI agents your team can rely on every day.</h2>
+            <h2>AI workflows beyond a single chat prompt.</h2>
             <div className="prop-tag">AI agent strategy · deployment consulting</div>
             <p className="body">We work with leaders, operators, and frontline teams to identify where agents can make the biggest impact, redesign critical workflows around intelligence, and deploy durable systems connected to your data, tools, controls, and business processes.</p>
             <div className="sec-cta"><a className="btn" href="#reserve" data-anchor-cta="">Book a call <span className="arr">→</span></a></div>
