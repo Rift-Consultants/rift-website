@@ -664,3 +664,7 @@ body[data-state=confirmed] .logo-wall {
   box-shadow: none;
   padding: 0;
 }
+
+.format {
+  display: none;
+}
