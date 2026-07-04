@@ -49,16 +49,15 @@
   grid-template-columns: 1fr 1fr;
   align-items: center;
   margin-top: 34px;
-  border: 1px solid rgba(237,238,233,.2);
+  gap: 8px;
   border-radius: var(--radius-sm);
-  overflow: hidden;
-  background: rgba(237,238,233,.08);
+  background: transparent;
   min-width: min(100%,430px);
 }
 
 .pricing-toggle button {
   appearance: none;
-  border: 0;
+  border: 1px solid var(--accent);
   background: transparent;
   cursor: pointer;
   font-family: var(--font-sans);
@@ -69,7 +68,7 @@
   padding: 0 30px;
   font-size: var(--fs-body-lg);
   font-weight: var(--fw-regular);
-  color: rgba(237,238,233,.86);
+  color: var(--accent);
   line-height: 1;
 }
 
