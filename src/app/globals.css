@@ -56,7 +56,12 @@
   min-width: min(100%,430px);
 }
 
-.pricing-toggle span {
+.pricing-toggle button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-sans);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,6 +76,11 @@
 .pricing-toggle .is-active {
   background: var(--accent);
   color: var(--accent-ink);
+}
+
+.pricing-toggle button:focus-visible {
+  outline: 2px solid var(--status-info);
+  outline-offset: -4px;
 }
 
 .pricing-panel {
