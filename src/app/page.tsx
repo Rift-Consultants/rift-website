@@ -10,7 +10,7 @@ export default function Home() {
             <a href="/services">Services</a>
             <a href="/industries">Industries</a>
             <a href="/events">Events</a>
-            <a href="/about">Pricing</a>
+            <a href="#pricing">Pricing</a>
             <a href="/about">About</a>
             <a href="/about">FAQs</a>
           </nav>
@@ -174,6 +174,40 @@ export default function Home() {
             <p className="body">We work with leaders, operators, and frontline teams to identify where agents can make the biggest impact, redesign critical workflows around intelligence, and deploy durable systems connected to your data, tools, controls, and business processes.</p>
             <div className="sec-cta"><a className="btn" href="#reserve" data-anchor-cta="">Book a call <span className="arr">→</span></a></div>
           </div></div>
+        </section>
+        <section className="pricing" id="pricing" data-screen-label="Pricing">
+          <div className="shell pricing-shell">
+            <div className="pricing-intro">
+              <span className="eyebrow">Pricing</span>
+              <h2>No more budget worries—simple and flexible.</h2>
+              <p>Choose between ongoing AI implementation support and one-time fixed-scope projects.</p>
+              <div className="pricing-toggle" aria-label="Pricing options">
+                <span>Monthly Retainer</span>
+                <span className="is-active">One-Off Project</span>
+              </div>
+            </div>
+            <div className="pricing-panel">
+              <div className="pricing-benefits">
+                <ul>
+                  <li><span aria-hidden="true">✓</span>Well-defined scope outlined in a detailed SOW document.</li>
+                  <li><span aria-hidden="true">✓</span>Reliable milestone-based delivery within 4-12 weeks.</li>
+                  <li><span aria-hidden="true">✓</span>End-to-end project management.</li>
+                  <li><span aria-hidden="true">✓</span>Dedicated AI workflow team led by an experienced implementation lead.</li>
+                  <li><span aria-hidden="true">✓</span>Specialized expertise in AI agents, automations, and operational systems.</li>
+                </ul>
+                <p>We keep it simple and flexible.</p>
+                <div className="pricing-note">Location and time: Los Angeles (PST)</div>
+              </div>
+              <article className="pricing-card" aria-label="Single AI workflow project pricing">
+                <div className="pricing-badge"><span />2 slots available</div>
+                <h3>Single AI Workflow Project</h3>
+                <p>Clear scope, timeline, and deliverables.</p>
+                <div className="pricing-divider" />
+                <div className="pricing-price">$5,000</div>
+                <a className="pricing-btn" href="#reserve" data-anchor-cta="">Start your 2 week free-trial</a>
+              </article>
+            </div>
+          </div>
         </section>
         <section className="format" data-screen-label="Format">
           <div className="shell"><span className="eyebrow">The format</span><h2>What the live call covers</h2>
