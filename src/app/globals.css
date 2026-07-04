@@ -657,3 +657,10 @@
 body[data-state=confirmed] .logo-wall {
   display: none;
 }
+
+.hs-embed-wrap {
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+}
