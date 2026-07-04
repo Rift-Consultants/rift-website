@@ -45,15 +45,15 @@ export default function Home() {
                   <h3 id="hs_cos_wrapper_form_991479870_title" className="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text" />
                   <div id="hs_form_target_form_991479870" className="hs-form-html" data-form-id="92c80c30-5e96-4801-b771-46ebf47b902d" data-portal-id="39849130" data-region="na2" />
                 </span>
-                <div className="logo-wall" aria-label="Technologies we work with">
-                  <p className="logo-wall-label">Technologies we work with</p>
-                  <div className="logo-wall-grid">
-                    <Image src="/images/logos/chatgpt-text.png" alt="ChatGPT" width={120} height={40} />
-                    <Image src="/images/logos/claude-text.png" alt="Claude" width={120} height={40} />
-                    <Image src="/images/logos/gemini-text.png" alt="Gemini" width={120} height={40} />
-                    <Image src="/images/logos/wispr-text.png" alt="Wispr" width={120} height={40} />
-                    <Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={120} height={40} />
-                  </div>
+              </div>
+              <div className="logo-wall" aria-label="Technologies we work with">
+                <p className="logo-wall-label">Technologies we work with</p>
+                <div className="logo-wall-grid">
+                  <Image src="/images/logos/chatgpt-text.png" alt="ChatGPT" width={120} height={40} />
+                  <Image src="/images/logos/claude-text.png" alt="Claude" width={120} height={40} />
+                  <Image src="/images/logos/gemini-text.png" alt="Gemini" width={120} height={40} />
+                  <Image src="/images/logos/wispr-text.png" alt="Wispr" width={120} height={40} />
+                  <Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={120} height={40} />
                 </div>
               </div>
               <div className="confirm-card" data-screen-label="Confirmation state">
