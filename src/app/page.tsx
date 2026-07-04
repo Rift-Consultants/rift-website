@@ -146,28 +146,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="learn-visual" aria-label="AI assistant workflow preview">
-              <div className="assistant-card">
-                <h3>What can I help you build?</h3>
-                <p>Describe the workflow you want to redesign, and we&rsquo;ll map the agent step by step.</p>
-                <div className="assistant-input">Identify our highest-value agentic AI use case <span>↑</span></div>
-                <div className="suggestion-row" aria-hidden="true">
-                  <span>Map pain points</span>
-                  <span>Draft agent workflow</span>
-                  <span>Create implementation brief</span>
-                </div>
-                <div className="playbook-grid" aria-hidden="true">
-                  <div><strong>Use Case Canvas</strong><small>Impact + feasibility</small></div>
-                  <div><strong>Workflow Map</strong><small>Human-agent roles</small></div>
-                  <div><strong>Governance Plan</strong><small>Controls + approvals</small></div>
-                  <div><strong>Technical Brief</strong><small>Ready for engineering</small></div>
-                </div>
-              </div>
+            <div className="learn-visual" aria-label="AI workflow implementation illustration">
+              <Image className="learn-image" src="/images/ai-workflow-visual.svg" alt="AI workflow moving from discovery to agent design and deployment" width={1200} height={900} />
             </div>
           </div>
         </section>
         <section className="featured consulting-section" data-screen-label="Consulting services">
-          <div className="featured-media"><img src="https://invest.communecapital.com/hubfs/COMMUNE/images/ventura-rendering.jpg" alt="Applied AI consulting team working through an enterprise deployment plan" loading="lazy" /></div>
+          <div className="featured-media"><Image src="/images/ai-agent-consulting.svg" alt="AI agent consulting workspace with connected workflow systems" width={1400} height={900} /></div>
           <div className="shell"><div className="featured-copy">
             <span className="eyebrow">Consulting</span>
             <h2>AI workflows beyond a single chat prompt.</h2>
