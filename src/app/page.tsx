@@ -214,7 +214,10 @@ export default function Home() {
         <footer className="compliance" data-screen-label="Footer">
           <div className="shell compliance-footer">
             <div className="footer-topline">
-              <div className="footer-year">© 2026</div>
+              <div>
+                <span className="eyebrow">AgentHappy</span>
+                <p className="footer-tagline">The OpenAI Deployment Company</p>
+              </div>
               <nav className="footer-links" aria-label="Footer links">
                 <a href="/terms">Terms of Use</a>
                 <a href="/privacy">Privacy Policy</a>
@@ -222,7 +225,9 @@ export default function Home() {
                 <div className="footer-locale" aria-label="Language and region">English <span>United States</span></div>
               </nav>
             </div>
-            <p className="footer-tagline">The OpenAI Deployment Company</p>
+            <div className="legalbar">
+              <div>© 2026 AgentHappy</div>
+            </div>
           </div>
         </footer>
       </main>
