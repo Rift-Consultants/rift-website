@@ -13,7 +13,7 @@ export default function Home() {
             <a href="/events">Events</a>
             <a href="#pricing">Pricing</a>
             <a href="/about">About</a>
-            <a href="/about">FAQs</a>
+            <a href="#faq">FAQs</a>
           </nav>
           <a className="nav-cta" href="#reserve">Book a call</a>
         </div>
@@ -186,8 +186,45 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="faq" id="faq" data-screen-label="FAQ">
+          <div className="shell faq-shell">
+            <span className="eyebrow">FAQ</span>
+            <h2>Common questions</h2>
+            <div className="faq-list">
+              <details className="faq-item">
+                <summary>What is included in a monthly retainer?</summary>
+                <p>Monthly retainers include ongoing AI strategy, workflow design, implementation support, and recurring check-ins so your team can keep shipping improvements without restarting scope each time.</p>
+              </details>
+              <details className="faq-item">
+                <summary>How is a one-off project scoped?</summary>
+                <p>We define a focused statement of work with clear milestones, owners, deliverables, and timeline before implementation begins.</p>
+              </details>
+              <details className="faq-item">
+                <summary>Can you work with our existing tools and data?</summary>
+                <p>Yes. We design AI workflows around the systems your team already uses, then identify the integrations, governance checkpoints, and rollout plan needed for production use.</p>
+              </details>
+              <details className="faq-item">
+                <summary>How soon can we start?</summary>
+                <p>After the initial call, we confirm fit, choose the right engagement model, and schedule kickoff based on current implementation availability.</p>
+              </details>
+            </div>
+          </div>
+        </section>
         <section className="reprompt" data-screen-label="Closing CTA"><div className="shell"><div className="reprompt-inner"><div><h2>Take the next step.</h2><p>Join us this Wednesday at 5pm PT. Register once and you are on the list — the join link arrives by email before every call.</p></div><a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a></div></div></section>
-        <footer className="compliance" data-screen-label="Disclosures footer"><div className="shell"><span className="eyebrow">DISCLAIMER</span><p id="eligibility">All content available on this webpage is general in nature, not directed or tailored to any particular person, and is for informational purposes only. This webpage and the contents herein do not constitute, and should not be construed as, an offer to purchase securities of Commune Omni Fund, LLC (&quot;Omni&quot;). Such an offer will only be made pursuant to an Offering Statement filed with the Securities and Exchange Commission available at <a href="https://www.sec.gov/Archives/edgar/data/2046788/000110465925080221/tm2519245d2_partiiandiii.htm" target="_blank" rel="noopener">Offering Statement link</a>. The offering referred to in the Offering Statement is being conducted by Omni pursuant to Tier 2 of Regulation A under the Securities Act of 1933, as amended. Prospective investors should carefully read and review the Offering Statement. Like all investments in securities, investing in Omni is highly speculative and involves significant risks, including the possible loss of your entire investment. Past performance is not a guarantee or indicative of future results. Only persons satisfying the investor eligibility standards may subscribe for an interest in Omni. Please see the Offering Statement for eligibility information. This webpage may contain forward-looking statements that involve substantial risks and uncertainties. Actual risks may differ materially from those expressed or implied in such statements, and such statements should not be relied upon as guarantees of future performance. Any forward-looking statements are speculative and are qualified in their entirety by the information and risks disclosed in the Offering Statement.</p><p>The SEC has not approved or passed upon the merits of the securities being offered in the Offering or the terms of the Offering. Neither this webpage nor its contents should be construed as legal, tax, investment, or other advice. Individuals are urged to consult with their own tax, legal, and investment advisers before making any investment decision. Securities are offered through Andes Capital Group, LLC, a registered broker-dealer, member FINRA/SIPC (CRD# 139212), acting as broker of record. Andes Capital Group, LLC may receive compensation in connection with this offering as disclosed in the offering circular.</p><div className="legalbar"><div>© 2026 COMMUNE Capital LLC</div><nav aria-label="Footer links"><a href="https://communecapital.com" target="_blank" rel="noopener">communecapital.com</a><span className="sep">·</span><a href="https://www.sec.gov/Archives/edgar/data/2046788/000110465925080221/tm2519245d2_partiiandiii.htm" target="_blank" rel="noopener">Offering Circular</a><span className="sep">·</span><a href="https://communecapital.com/investorportal" target="_blank" rel="noopener">Investor Login</a></nav></div></div></footer>
+        <footer className="compliance" data-screen-label="Footer">
+          <div className="shell compliance-footer">
+            <div className="footer-topline">
+              <div className="footer-year">© 2026</div>
+              <nav className="footer-links" aria-label="Footer links">
+                <a href="/terms">Terms of Use</a>
+                <a href="/privacy">Privacy Policy</a>
+                <a href="/cookies">Cookie Policy</a>
+                <div className="footer-locale" aria-label="Language and region">English <span>United States</span></div>
+              </nav>
+            </div>
+            <p className="footer-tagline">The OpenAI Deployment Company</p>
+          </div>
+        </footer>
       </main>
       <div className="stickybar" aria-hidden="true"><a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a></div>
     </>
