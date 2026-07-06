@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useMemo, useRef } from 'react';
 
 type LearnBullet = {
@@ -15,7 +16,8 @@ type InteractiveLearnSectionProps = {
   asciiChars?: string;
   ditherStrength?: number;
   voxelResolution?: number;
-  mode?: 'canvas2d' | 'static';
+  mode?: 'image' | 'canvas2d' | 'static';
+  imageSrc?: string;
 };
 
 const DEFAULT_BULLETS: LearnBullet[] = [
@@ -48,7 +50,8 @@ export default function InteractiveLearnSection({
   asciiChars = ' .:-=+*#%@',
   ditherStrength = 0.58,
   voxelResolution = 6,
-  mode = 'canvas2d',
+  mode = 'image',
+  imageSrc = '/images/ascii-dither-workspace.svg',
 }: InteractiveLearnSectionProps) {
   const normalizedBullets = useMemo(() => bullets, [bullets]);
 
@@ -76,6 +79,7 @@ export default function InteractiveLearnSection({
           ditherStrength={ditherStrength}
           voxelResolution={voxelResolution}
           mode={mode}
+          imageSrc={imageSrc}
         />
       </div>
     </section>
@@ -88,16 +92,19 @@ function AsciiVoxelVisual({
   ditherStrength,
   voxelResolution,
   mode,
+  imageSrc,
 }: {
   ariaLabel: string;
   asciiChars: string;
   ditherStrength: number;
   voxelResolution: number;
-  mode: 'canvas2d' | 'static';
+  mode: 'image' | 'canvas2d' | 'static';
+  imageSrc: string;
 }) {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const asciiRef = useRef<HTMLPreElement | null>(null);
   const pointerRef = useRef({ x: 0, y: 0 });
+
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -199,6 +206,21 @@ function AsciiVoxelVisual({
       mobileQuery.removeEventListener('change', onMobileChange);
     };
   }, [asciiChars, ditherStrength, mode, voxelResolution]);
+
+  if (mode === 'image') {
+    return (
+      <div className="learn-visual ascii-reference-shell" role="img" aria-label={ariaLabel}>
+        <Image
+          className="ascii-reference-image"
+          src={imageSrc}
+          alt="Dithered ASCII technology workspace in black, coral, and cream"
+          width={1028}
+          height={1028}
+          priority={false}
+        />
+      </div>
+    );
+  }
 
   return (
     <div
