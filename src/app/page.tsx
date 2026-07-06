@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import PricingSection from './PricingSection';
+import InteractiveLearnSection from './InteractiveLearnSection';
 
 export default function Home() {
   return (
@@ -118,39 +119,7 @@ export default function Home() {
             </form>
           </div>
         </section>
-        <section className="featured learn-section" data-screen-label="What you'll learn">
-          <div className="shell learn-shell">
-            <div className="featured-copy learn-copy">
-              <h2>What you&rsquo;ll learn</h2>
-              <div className="learn-list">
-                <div className="learn-item">
-                  <span className="learn-check" aria-hidden="true">✓</span>
-                  <div>
-                    <h3>Identify your highest-value agentic AI use case</h3>
-                    <p>Map the pain points, workflows, and strategic opportunities where AI agents can create the biggest operational impact for your organization.</p>
-                  </div>
-                </div>
-                <div className="learn-item">
-                  <span className="learn-check" aria-hidden="true">✓</span>
-                  <div>
-                    <h3>Design an agent-first workflow</h3>
-                    <p>Apply the AGENT framework to redesign a workflow for autonomous operation, human-agent collaboration, governance checkpoints, and technical handoff.</p>
-                  </div>
-                </div>
-                <div className="learn-item">
-                  <span className="learn-check" aria-hidden="true">✓</span>
-                  <div>
-                    <h3>Prepare an implementation brief for your team</h3>
-                    <p>Leave with a practical roadmap covering build-vs-buy recommendations, vendor evaluation criteria, risk controls, resource requirements, and success metrics.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="learn-visual" aria-label="AI workflow implementation illustration">
-              <Image className="learn-image" src="/images/ai-workflow-visual.svg" alt="AI workflow moving from discovery to agent design and deployment" width={1200} height={900} />
-            </div>
-          </div>
-        </section>
+        <InteractiveLearnSection />
         <section className="featured consulting-section" data-screen-label="Consulting services">
           <div className="featured-media"><Image src="/images/ai-agent-consulting.svg" alt="AI agent consulting workspace with connected workflow systems" width={1400} height={900} /></div>
           <div className="shell"><div className="featured-copy">
