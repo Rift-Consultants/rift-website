@@ -145,23 +145,13 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="learn-visual" aria-label="AI assistant workflow preview">
-              <div className="assistant-card">
-                <h3>What can I help you build?</h3>
-                <p>Describe the workflow you want to redesign, and we&rsquo;ll map the agent step by step.</p>
-                <div className="assistant-input">Identify our highest-value agentic AI use case <span>↑</span></div>
-                <div className="suggestion-row" aria-hidden="true">
-                  <span>Map pain points</span>
-                  <span>Draft agent workflow</span>
-                  <span>Create implementation brief</span>
-                </div>
-                <div className="playbook-grid" aria-hidden="true">
-                  <div><strong>Use Case Canvas</strong><small>Impact + feasibility</small></div>
-                  <div><strong>Workflow Map</strong><small>Human-agent roles</small></div>
-                  <div><strong>Governance Plan</strong><small>Controls + approvals</small></div>
-                  <div><strong>Technical Brief</strong><small>Ready for engineering</small></div>
-                </div>
-              </div>
+            <div className="learn-visual">
+              <img
+                src="/images/graphic-2.png"
+                alt="Agentic AI workflow graphic"
+                className="learn-visual-image"
+                loading="lazy"
+              />
             </div>
           </div>
         </section>
