@@ -5,7 +5,7 @@ export default function Home() {
     <>
       <header className="topbar">
         <div className="topbar-inner">
-          <a className="wordmark" href="#top" aria-label="Rift Consultants home">Rift <span>Consultants</span></a>
+          <a className="wordmark" href="#top" aria-label="AgentHappy home">AGENT<span>HAPPY</span></a>
           <nav className="main-nav" aria-label="Primary navigation">
             <a href="/services">Services</a>
             <a href="/industries">Industries</a>
@@ -14,7 +14,7 @@ export default function Home() {
             <a href="/about">About</a>
             <a href="#faqs">FAQs</a>
           </nav>
-          <a className="nav-cta" href="#reserve">Book a call</a>
+          <a className="nav-cta" href="#reserve">Talk to us</a>
         </div>
       </header>
       <main id="top">
@@ -23,7 +23,7 @@ export default function Home() {
 
             <div className="hero-inner">
               <div className="hero-copy reveal">
-                <h1>AI training and implementation for corporate leadership and management teams</h1>
+                <h1>AI training and implementation for corporate leadership <br /> and management teams. Turn single-prompt chats, untracked token usage,<br /> and AI hallucinations into multi-agent production workflows</h1>
                 <div className="hero-actions" aria-label="Hero calls to action">
                   <a className="btn" href="#reserve" data-anchor-cta="">start a project</a>
                   <a className="btn btn-secondary" href="#reserve" data-anchor-cta="">register for training</a>
@@ -49,7 +49,7 @@ export default function Home() {
             <div className="webinar-copy">
               <span className="eyebrow">LIVE WEBINAR</span>
               <h2>IT&rsquo;s Time to Build:<br /><em>Your First IT Agent</em></h2>
-              <p className="body">Join Rift Consultants for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
+              <p className="body">Join AgentHappy for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
               <div className="speaker-row" aria-label="Webinar speakers">
                 <div className="speaker-item">
                   <span className="speaker-avatar" aria-hidden="true">RC</span>
@@ -61,8 +61,8 @@ export default function Home() {
                 <div className="speaker-item">
                   <span className="speaker-avatar" aria-hidden="true">IT</span>
                   <div>
-                    <strong>IT Agent Lab</strong>
-                    <span>Implementation Specialists</span>
+                    <strong>Kenny Mack</strong>
+                    <span>Applied AI Engineer</span>
                   </div>
                 </div>
               </div>
@@ -229,7 +229,7 @@ export default function Home() {
               <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
             </div>
           </div>
-          <div className="shell footer-credit">© Rift Consultants 2026</div>
+          <div className="shell footer-credit">© AgentHappy 2026</div>
         </footer>
       </main>
       <div className="stickybar" aria-hidden="true"><a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a></div>
