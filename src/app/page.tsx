@@ -20,13 +20,7 @@ export default function Home() {
       <main id="top">
         <section className="fold" id="reserve" data-screen-label="Above the fold (form-first)">
           <div className="hero">
-            <div className="hero-bg">
-              <picture>
-                <source media="(max-width: 860px)" srcSet="/images/rift-hero-banner-1.png"  />
-                <img src="/images/rift-hero-banner-1.png" alt="Two subjects at a conference table discussing Applied AI" />
-              </picture>
-            </div>
-            <div className="hero-scrim" />
+
             <div className="hero-inner">
               <div className="hero-copy reveal">
                 <span className="hero-locator"><span className="dot" />Live · Wednesdays 5pm PT</span>
