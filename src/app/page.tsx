@@ -129,7 +129,7 @@ export default function Home() {
             </div>
             <div className="learn-visual">
               <img
-                src="/images/graphic-2.png"
+                src="/images/asset-1.png"
                 alt="Agentic AI workflow graphic"
                 className="learn-visual-image"
                 loading="lazy"
