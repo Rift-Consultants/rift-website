@@ -23,10 +23,10 @@ export default function Home() {
 
             <div className="hero-inner">
               <div className="hero-copy reveal">
-                <h1>AI training and implementation for corporate leadership <br /> and management teams. Turn single-prompt chats, untracked token usage,<br /> and AI hallucinations into multi-agent production workflows</h1>
+                <h1>AI training and implementation for corporate leadership <br /> and management teams. Turn single-prompt chats, untracked <br /> token usage, and AI hallucinations into multi-agent production workflows</h1>
                 <div className="hero-actions" aria-label="Hero calls to action">
-                  <a className="btn" href="#reserve" data-anchor-cta="">start a project</a>
-                  <a className="btn btn-secondary" href="#reserve" data-anchor-cta="">register for training</a>
+                  <a className="btn" href="#reserve" data-anchor-cta="">sign up for training</a>
+                  <a className="btn btn-secondary" href="#reserve" data-anchor-cta="">start a project</a>
                 </div>
               </div>
             </div>
