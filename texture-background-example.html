@@ -43,18 +43,20 @@
         var(--bg);
     }
 
-    /* Grain layer: this is what creates the texture. */
-    .page::before {
+    /* Reusable SVG noise utility: add class="noise" to any positioned element. */
+    .noise {
+      position: relative;
+    }
+
+    .noise::before {
       content: "";
       position: absolute;
       inset: 0;
-      z-index: 0;
       pointer-events: none;
-      opacity: 0.14;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 240 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.58'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%0A%3Csvg xmlns='http://www.w3.org/2000/svg' width='500' height='500'%3E%3Cfilter id='noise' x='0' y='0'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeBlend mode='screen'/%3E%3C/filter%3E%3Crect width='500' height='500' filter='url(%23noise)' opacity='0.5'/%3E%3C/svg%3E");
       background-repeat: repeat;
-      background-size: 220px 220px;
-      mix-blend-mode: screen;
+      background-size: 500px 500px;
+      mix-blend-mode: soft-light;
     }
 
     /* Subtle grid/scan overlay, optional. Delete this block if you only want grain. */
@@ -292,7 +294,7 @@
   </style>
 </head>
 <body>
-  <main class="page">
+  <main class="page noise">
     <div class="shell">
       <header class="nav" aria-label="Example navigation">
         <span>Texture Test</span>
