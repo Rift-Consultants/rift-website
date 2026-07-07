@@ -32,3 +32,6 @@
 
 /* Slightly rougher global page grain while preserving the same #0a0a0a background color */
 body:before,.noise:before{background-size:160px 160px}body:before{opacity:.18}
+
+/* Scroll-aware top navigation */
+.topbar{transition:background-color 180ms ease,border-color 180ms ease,box-shadow 180ms ease}.nav-cta{border-radius:0;background:transparent;border-color:rgba(237,238,233,.3);color:var(--fg-1);padding:13px 18px;font-size:12px;font-weight:600;letter-spacing:0;text-transform:uppercase}.nav-cta:hover{background:rgba(255,255,255,.08);border-color:var(--accent);color:var(--fg-1)}.nav-cta:active{background:rgba(255,255,255,.12);border-color:var(--accent);color:var(--fg-1)}body.has-fixed-topbar .topbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:#0a0a0a;border-bottom-color:var(--border-soft);box-shadow:0 12px 36px rgba(0,0,0,.22)}body.has-fixed-topbar .nav-cta{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}body.has-fixed-topbar .nav-cta:hover{filter:brightness(.92)}body.has-fixed-topbar .nav-cta:active{filter:brightness(.86);transform:translateY(1px)}

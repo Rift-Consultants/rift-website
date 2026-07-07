@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import ScrollHeaderState from './scroll-header-state';
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
           <a className="nav-cta" href="#reserve">Talk to us</a>
         </div>
       </header>
+      <ScrollHeaderState />
       <main id="top">
         <section className="fold" id="reserve" data-screen-label="Above the fold (form-first)">
           <div className="hero">
