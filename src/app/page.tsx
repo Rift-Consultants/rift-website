@@ -203,6 +203,17 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <section className="reprompt" data-screen-label="Closing CTA">
+          <div className="shell">
+            <div className="reprompt-inner">
+              <div>
+                <h2>Take the next step.</h2>
+                <p>Join us this Wednesday at 5pm PT. Register once and you are on the list — the join link arrives by email before every call.</p>
+              </div>
+              <a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a>
+            </div>
+          </div>
+        </section>
         <footer className="site-footer" data-screen-label="Footer CTA">
           <div className="shell footer-cta">
             <h2>Let&rsquo;s build AI systems that actually work for your business.</h2>
