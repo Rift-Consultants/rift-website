@@ -31,22 +31,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="formstrip reveal d1">
-            <div className="formstrip-inner">
-              <div className="hs-embed-wrap">
-                <span id="hs_cos_wrapper_" className="hs_cos_wrapper hs_cos_wrapper_widget hs_cos_wrapper_type_form" data-hs-cos-general-type="widget" data-hs-cos-type="form">
-                  <h3 id="hs_cos_wrapper_form_991479870_title" className="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text" />
-                  <div id="hs_form_target_form_991479870" className="hs-form-html" data-form-id="92c80c30-5e96-4801-b771-46ebf47b902d" data-portal-id="39849130" data-region="na2" />
-                </span>
-              </div>
-              <div className="confirm-card" data-screen-label="Confirmation state">
-                <span className="eyebrow">Confirmed</span>
-                <h3>You&apos;re in.</h3>
-                <p>We&apos;ll send you the join link by email. See you Wednesday at 5pm PT.</p>
-                <div className="confirm-sub">Check your inbox for a message from COMMUNE Capital. The link is unique to you.</div>
-              </div>
-            </div>
-          </div>
         </section>
         <section className="logo-wall" aria-label="Technologies we work with">
           <div className="logo-wall-inner">
@@ -161,15 +145,6 @@ export default function Home() {
             <div className="sec-cta"><a className="btn" href="#reserve" data-anchor-cta="">Book a call <span className="arr">→</span></a></div>
           </div></div>
         </section>
-        <section className="format" data-screen-label="Format">
-          <div className="shell"><span className="eyebrow">The format</span><h2>What the live call covers</h2>
-            <div className="format-list">
-              <div className="format-row"><div className="format-dur">30 min</div><div><h3>The week&apos;s education topic</h3><p>A focused session on one part of how real estate ownership works. No fluff.</p></div></div>
-              <div className="format-row"><div className="format-dur">15 min</div><div><h3>What COMMUNE is doing today</h3><p>A look at where we&apos;re currently allocating capital and what we&apos;re building. Real assets, real markets, real numbers.</p></div></div>
-              <div className="format-row"><div className="format-dur">15 to 30 min</div><div><h3>Live Q&amp;A</h3><p>Ask the team anything. We stay until the questions are done.</p></div></div>
-            </div>
-          </div>
-        </section>
         <section className="pricing-section" id="pricing" data-screen-label="Pricing">
           <div className="shell pricing-shell">
             <div className="section-heading">
@@ -228,8 +203,29 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="reprompt" data-screen-label="Closing CTA"><div className="shell"><div className="reprompt-inner"><div><h2>Take the next step.</h2><p>Join us this Wednesday at 5pm PT. Register once and you are on the list — the join link arrives by email before every call.</p></div><a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a></div></div></section>
-        <footer className="compliance" data-screen-label="Disclosures footer"><div className="shell"><span className="eyebrow">DISCLAIMER</span><p id="eligibility">All content available on this webpage is general in nature, not directed or tailored to any particular person, and is for informational purposes only. This webpage and the contents herein do not constitute, and should not be construed as, an offer to purchase securities of Commune Omni Fund, LLC (&quot;Omni&quot;). Such an offer will only be made pursuant to an Offering Statement filed with the Securities and Exchange Commission available at <a href="https://www.sec.gov/Archives/edgar/data/2046788/000110465925080221/tm2519245d2_partiiandiii.htm" target="_blank" rel="noopener">Offering Statement link</a>. The offering referred to in the Offering Statement is being conducted by Omni pursuant to Tier 2 of Regulation A under the Securities Act of 1933, as amended. Prospective investors should carefully read and review the Offering Statement. Like all investments in securities, investing in Omni is highly speculative and involves significant risks, including the possible loss of your entire investment. Past performance is not a guarantee or indicative of future results. Only persons satisfying the investor eligibility standards may subscribe for an interest in Omni. Please see the Offering Statement for eligibility information. This webpage may contain forward-looking statements that involve substantial risks and uncertainties. Actual risks may differ materially from those expressed or implied in such statements, and such statements should not be relied upon as guarantees of future performance. Any forward-looking statements are speculative and are qualified in their entirety by the information and risks disclosed in the Offering Statement.</p><p>The SEC has not approved or passed upon the merits of the securities being offered in the Offering or the terms of the Offering. Neither this webpage nor its contents should be construed as legal, tax, investment, or other advice. Individuals are urged to consult with their own tax, legal, and investment advisers before making any investment decision. Securities are offered through Andes Capital Group, LLC, a registered broker-dealer, member FINRA/SIPC (CRD# 139212), acting as broker of record. Andes Capital Group, LLC may receive compensation in connection with this offering as disclosed in the offering circular.</p><div className="legalbar"><div>© 2026 COMMUNE Capital LLC</div><nav aria-label="Footer links"><a href="https://communecapital.com" target="_blank" rel="noopener">communecapital.com</a><span className="sep">·</span><a href="https://www.sec.gov/Archives/edgar/data/2046788/000110465925080221/tm2519245d2_partiiandiii.htm" target="_blank" rel="noopener">Offering Circular</a><span className="sep">·</span><a href="https://communecapital.com/investorportal" target="_blank" rel="noopener">Investor Login</a></nav></div></div></footer>
+        <footer className="site-footer" data-screen-label="Footer CTA">
+          <div className="shell footer-cta">
+            <h2>Let&rsquo;s build AI systems that actually work for your business.</h2>
+            <p>Book a 30-minute strategy call. We&rsquo;ll audit your current workflows, show you where AI can create leverage, and map out what implementation looks like for your team.</p>
+            <a className="footer-cta-button" href="#reserve" data-anchor-cta="">Book a strategy call</a>
+            <span>30-minute call. No sales pitch. Just solutions.</span>
+          </div>
+          <div className="shell footer-bottom">
+            <nav aria-label="Footer navigation">
+              <a href="/services">Services</a>
+              <a href="/industries">Industries</a>
+              <a href="/events">Events</a>
+              <a href="#pricing">Pricing</a>
+              <a href="/about">About</a>
+              <a href="#faqs">FAQs</a>
+            </nav>
+            <div className="footer-social" aria-label="Social links">
+              <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">X</a>
+              <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+            </div>
+          </div>
+          <div className="shell footer-credit">© Rift Consultants 2026</div>
+        </footer>
       </main>
       <div className="stickybar" aria-hidden="true"><a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a></div>
     </>
