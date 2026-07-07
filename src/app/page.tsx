@@ -215,12 +215,6 @@ export default function Home() {
           </div>
         </section>
         <footer className="site-footer" data-screen-label="Footer CTA">
-          <div className="shell footer-cta">
-            <h2>Let&rsquo;s build AI systems that actually work for your business.</h2>
-            <p>Book a 30-minute strategy call. We&rsquo;ll audit your current workflows, show you where AI can create leverage, and map out what implementation looks like for your team.</p>
-            <a className="footer-cta-button" href="#reserve" data-anchor-cta="">Book a strategy call</a>
-            <span>30-minute call. No sales pitch. Just solutions.</span>
-          </div>
           <div className="shell footer-bottom">
             <nav aria-label="Footer navigation">
               <a href="/services">Services</a>

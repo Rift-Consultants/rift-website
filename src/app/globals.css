@@ -15,3 +15,6 @@
 
 /* Further tighten FAQ typography */
 .faq-section{padding:42px 0 52px}.faq-section .eyebrow{font-size:11px}.faq-section h2{margin:14px 0 26px;font-size:clamp(28px,3vw,40px);letter-spacing:-.035em}.faq-list summary{padding:16px 0;font-size:clamp(16px,1.45vw,20px);font-weight:500}.faq-list summary:after{flex-basis:30px;width:30px;height:30px;font-size:22px}.faq-list details p{margin:-2px 0 16px;font-size:14px;line-height:1.5;max-width:720px}@media (max-width:860px){.faq-section{padding:38px 0 46px}.faq-section h2{font-size:30px}.faq-list summary{font-size:17px;padding:16px 0}.faq-list summary:after{flex-basis:30px;width:30px;height:30px;font-size:22px}.faq-list details p{font-size:14px}}
+
+/* Footer should match page background and omit extra CTA block */
+.site-footer{background:#0a0a0a;padding:34px 0 28px}.footer-cta{display:none}.footer-bottom{margin-top:0}.footer-credit{margin-top:42px}
