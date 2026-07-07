@@ -1,11 +1,12 @@
 import Image from 'next/image';
+import ScrollHeaderState from './scroll-header-state';
 
 export default function Home() {
   return (
     <>
       <header className="topbar">
         <div className="topbar-inner">
-          <a className="wordmark" href="#top" aria-label="Rift Consultants home">Rift <span>Consultants</span></a>
+          <a className="wordmark" href="#top" aria-label="AgentHappy home">AGENT<span>HAPPY</span></a>
           <nav className="main-nav" aria-label="Primary navigation">
             <a href="/services">Services</a>
             <a href="/industries">Industries</a>
@@ -14,19 +15,20 @@ export default function Home() {
             <a href="/about">About</a>
             <a href="#faqs">FAQs</a>
           </nav>
-          <a className="nav-cta" href="#reserve">Book a call</a>
+          <a className="nav-cta" href="#reserve">Talk to us</a>
         </div>
       </header>
+      <ScrollHeaderState />
       <main id="top">
         <section className="fold" id="reserve" data-screen-label="Above the fold (form-first)">
           <div className="hero">
 
             <div className="hero-inner">
               <div className="hero-copy reveal">
-                <h1>AI training and implementation for corporate leadership and management teams</h1>
+                <h1>AI training and implementation for corporate leadership <br /> and management teams. Turn single-prompt chats, untracked <br /> token usage, and AI hallucinations into multi-agent production workflows</h1>
                 <div className="hero-actions" aria-label="Hero calls to action">
-                  <a className="btn" href="#reserve" data-anchor-cta="">start a project</a>
-                  <a className="btn btn-secondary" href="#reserve" data-anchor-cta="">register for training</a>
+                  <a className="btn" href="#reserve" data-anchor-cta="">sign up for training</a>
+                  <a className="btn btn-secondary" href="#reserve" data-anchor-cta="">start a project</a>
                 </div>
               </div>
             </div>
@@ -47,9 +49,9 @@ export default function Home() {
         <section className="webinar" data-screen-label="Webinar registration">
           <div className="shell webinar-shell">
             <div className="webinar-copy">
-              <span className="eyebrow">LIVE WEBINAR</span>
+              <span className="eyebrow webinar-eyebrow"><span className="live-dot" aria-hidden="true" />LIVE WEBINAR</span>
               <h2>IT&rsquo;s Time to Build:<br /><em>Your First IT Agent</em></h2>
-              <p className="body">Join Rift Consultants for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
+              <p className="body">Join AgentHappy for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
               <div className="speaker-row" aria-label="Webinar speakers">
                 <div className="speaker-item">
                   <span className="speaker-avatar" aria-hidden="true">RC</span>
@@ -61,8 +63,8 @@ export default function Home() {
                 <div className="speaker-item">
                   <span className="speaker-avatar" aria-hidden="true">IT</span>
                   <div>
-                    <strong>IT Agent Lab</strong>
-                    <span>Implementation Specialists</span>
+                    <strong>Kenny Mack</strong>
+                    <span>Applied AI Engineer</span>
                   </div>
                 </div>
               </div>
@@ -152,30 +154,54 @@ export default function Home() {
               <h2>No more budget worries<br />—simple and flexible.</h2>
               <p>Choose between ongoing AI implementation support and one-time fixed-scope projects.</p>
             </div>
-            <div className="pricing-toggle" aria-label="Pricing options">
-              <span className="active">Monthly Retainer</span>
-              <span>One-Off Project</span>
-            </div>
-            <div className="pricing-panel">
-              <div className="pricing-benefits">
-                <ul>
-                  <li>Continuous AI workflow discovery, design, and implementation support.</li>
-                  <li>Priority access to a dedicated AI workflow team each month.</li>
-                  <li>Weekly strategy and delivery check-ins to keep momentum high.</li>
-                  <li>Roadmap management across agents, automations, tools, and data connections.</li>
-                  <li>Specialized expertise in AI agents, automations, and operational systems.</li>
-                </ul>
-                <p>We keep it simple and flexible.</p>
-                <span className="pricing-note">Location and time: Los Angeles (PST)</span>
+            <div className="pricing-options">
+              <input type="radio" id="pricing-monthly" name="pricing-plan" defaultChecked />
+              <input type="radio" id="pricing-project" name="pricing-plan" />
+              <div className="pricing-toggle" aria-label="Pricing options">
+                <label htmlFor="pricing-monthly">Monthly Retainer</label>
+                <label htmlFor="pricing-project">One-Off Project</label>
               </div>
-              <article className="pricing-card">
-                <div className="availability"><span aria-hidden="true" />4 slots available</div>
-                <h3>Monthly AI Retainer</h3>
-                <p>Ongoing strategy, implementation, and optimization support for teams building AI into daily operations.</p>
-                <div className="pricing-rule" />
-                <div className="price">$8,000 <span>/ month</span></div>
-                <a className="btn" href="#reserve" data-anchor-cta="">Start your monthly retainer</a>
-              </article>
+              <div className="pricing-panel monthly-panel">
+                <div className="pricing-benefits">
+                  <ul>
+                    <li>Continuous AI workflow discovery, design, and implementation support.</li>
+                    <li>Priority access to a dedicated AI workflow team each month.</li>
+                    <li>Weekly strategy and delivery check-ins to keep momentum high.</li>
+                    <li>Roadmap management across agents, automations, tools, and data connections.</li>
+                    <li>Specialized expertise in AI agents, automations, and operational systems.</li>
+                  </ul>
+                  <p>We keep it simple and flexible.</p>
+                  <span className="pricing-note">Location and time: Los Angeles (PST)</span>
+                </div>
+                <article className="pricing-card">
+                  <div className="availability"><span aria-hidden="true" />4 slots available</div>
+                  <h3>Monthly AI Retainer</h3>
+                  <p>Ongoing strategy, implementation, and optimization support for teams building AI into daily operations.</p>
+                  <div className="pricing-rule" />
+                  <div className="price">$8,000 <span>/ month</span></div>
+                  <a className="btn" href="#reserve" data-anchor-cta="">Start your monthly retainer</a>
+                </article>
+              </div>
+              <div className="pricing-panel project-panel">
+                <div className="pricing-benefits">
+                  <ul>
+                    <li>Fixed-scope AI agent or automation build with a clearly defined outcome.</li>
+                    <li>Discovery, workflow mapping, implementation plan, and delivery milestones.</li>
+                    <li>Hands-on setup across your approved tools, prompts, data, and operating process.</li>
+                    <li>Team walkthrough, documentation, and practical launch recommendations.</li>
+                  </ul>
+                  <p>Ideal when you have one priority workflow to ship.</p>
+                  <span className="pricing-note">Typical timeline: 2–6 weeks after kickoff</span>
+                </div>
+                <article className="pricing-card">
+                  <div className="availability"><span aria-hidden="true" />Fixed scope</div>
+                  <h3>One-Off AI Project</h3>
+                  <p>A focused engagement to design, build, and hand off a specific AI workflow or agent for your team.</p>
+                  <div className="pricing-rule" />
+                  <div className="price">Custom <span>/ project</span></div>
+                  <a className="btn" href="#reserve" data-anchor-cta="">Scope a one-off project</a>
+                </article>
+              </div>
             </div>
           </div>
         </section>
@@ -229,7 +255,7 @@ export default function Home() {
               <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
             </div>
           </div>
-          <div className="shell footer-credit">© Rift Consultants 2026</div>
+          <div className="shell footer-credit">© AgentHappy 2026</div>
         </footer>
       </main>
       <div className="stickybar" aria-hidden="true"><a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a></div>
