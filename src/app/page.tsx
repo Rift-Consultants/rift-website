@@ -138,7 +138,7 @@ export default function Home() {
           </div>
         </section>
         <section className="featured consulting-section" data-screen-label="Consulting services">
-          <div className="featured-media"><img src="https://invest.communecapital.com/hubfs/COMMUNE/images/ventura-rendering.jpg" alt="Applied AI consulting team working through an enterprise deployment plan" loading="lazy" /></div>
+          <div className="featured-media"><img src="/images/as-2.png" alt="Applied AI consulting team working through an enterprise deployment plan" loading="lazy" /></div>
           <div className="shell"><div className="featured-copy">
             <span className="eyebrow">Consulting</span>
             <h2>AI workflows beyond a single chat prompt.</h2>
