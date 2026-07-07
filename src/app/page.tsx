@@ -23,11 +23,11 @@ export default function Home() {
 
             <div className="hero-inner">
               <div className="hero-copy reveal">
-                <span className="hero-locator"><span className="dot" />Live · Wednesdays 5pm PT</span>
-                <span className="eyebrow">Commune Capital · OMNI Fund</span>
-                <h1>Build and Deploy AI systems. <em>For Leadership teams.</em><a className="foot-ref" href="#eligibility" aria-label="See investor eligibility disclaimer">*</a></h1>
-                <p className="sub">Join us live every Wednesday at 5pm PT to learn more. Reserve your seat below.</p>
-                <p className="hero-fineprint">*Only persons satisfying the investor eligibility standards may subscribe for an interest in Omni. Please see the offering statement for eligibility information.</p>
+                <h1>AI training and implementation for corporate leadership and management teams</h1>
+                <div className="hero-actions" aria-label="Hero calls to action">
+                  <a className="btn" href="#reserve" data-anchor-cta="">start a project</a>
+                  <a className="btn btn-secondary" href="#reserve" data-anchor-cta="">register for training</a>
+                </div>
               </div>
             </div>
           </div>
