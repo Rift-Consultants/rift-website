@@ -138,14 +138,23 @@ export default function Home() {
           </div>
         </section>
         <section className="featured consulting-section" data-screen-label="Consulting services">
-          <div className="featured-media"><img src="https://invest.communecapital.com/hubfs/COMMUNE/images/ventura-rendering.jpg" alt="Applied AI consulting team working through an enterprise deployment plan" loading="lazy" /></div>
-          <div className="shell"><div className="featured-copy">
-            <span className="eyebrow">Consulting</span>
-            <h2>AI workflows beyond a single chat prompt.</h2>
-            <div className="prop-tag">AI agent strategy · deployment consulting</div>
-            <p className="body">We work with leaders, operators, and frontline teams to identify where agents can make the biggest impact, redesign critical workflows around intelligence, and deploy durable systems connected to your data, tools, controls, and business processes.</p>
-            <div className="sec-cta"><a className="btn" href="#reserve" data-anchor-cta="">Book a call <span className="arr">→</span></a></div>
-          </div></div>
+          <div className="shell consulting-shell">
+            <div className="learn-visual consulting-visual">
+              <img
+                src="/images/as-2.png"
+                alt="Applied AI consulting team working through an enterprise deployment plan"
+                className="learn-visual-image"
+                loading="lazy"
+              />
+            </div>
+            <div className="featured-copy consulting-copy">
+              <span className="eyebrow">Consulting</span>
+              <h2>AI workflows beyond a single chat prompt.</h2>
+              <div className="prop-tag">AI agent strategy · deployment consulting</div>
+              <p className="body">We work with leaders, operators, and frontline teams to identify where agents can make the biggest impact, redesign critical workflows around intelligence, and deploy durable systems connected to your data, tools, controls, and business processes.</p>
+              <div className="sec-cta"><a className="btn" href="#reserve" data-anchor-cta="">Book a call <span className="arr">→</span></a></div>
+            </div>
+          </div>
         </section>
         <section className="pricing-section" id="pricing" data-screen-label="Pricing">
           <div className="shell pricing-shell">
