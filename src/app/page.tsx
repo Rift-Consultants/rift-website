@@ -10,9 +10,9 @@ export default function Home() {
             <a href="/services">Services</a>
             <a href="/industries">Industries</a>
             <a href="/events">Events</a>
-            <a href="/about">Pricing</a>
+            <a href="#pricing">Pricing</a>
             <a href="/about">About</a>
-            <a href="/about">FAQs</a>
+            <a href="#faqs">FAQs</a>
           </nav>
           <a className="nav-cta" href="#reserve">Book a call</a>
         </div>
@@ -38,16 +38,6 @@ export default function Home() {
                   <h3 id="hs_cos_wrapper_form_991479870_title" className="hs_cos_wrapper form-title" data-hs-cos-general-type="widget_field" data-hs-cos-type="text" />
                   <div id="hs_form_target_form_991479870" className="hs-form-html" data-form-id="92c80c30-5e96-4801-b771-46ebf47b902d" data-portal-id="39849130" data-region="na2" />
                 </span>
-                <div className="logo-wall" aria-label="Technologies we work with">
-                  <p className="logo-wall-label">Technologies we work with</p>
-                  <div className="logo-wall-grid">
-                    <Image src="/images/logos/chatgpt-text.png" alt="ChatGPT" width={120} height={40} />
-                    <Image src="/images/logos/claude-text.png" alt="Claude" width={120} height={40} />
-                    <Image src="/images/logos/gemini-text.png" alt="Gemini" width={120} height={40} />
-                    <Image src="/images/logos/wispr-text.png" alt="Wispr" width={120} height={40} />
-                    <Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={120} height={40} />
-                  </div>
-                </div>
               </div>
               <div className="confirm-card" data-screen-label="Confirmation state">
                 <span className="eyebrow">Confirmed</span>
@@ -55,6 +45,18 @@ export default function Home() {
                 <p>We&apos;ll send you the join link by email. See you Wednesday at 5pm PT.</p>
                 <div className="confirm-sub">Check your inbox for a message from COMMUNE Capital. The link is unique to you.</div>
               </div>
+            </div>
+          </div>
+        </section>
+        <section className="logo-wall" aria-label="Technologies we work with">
+          <div className="logo-wall-inner">
+            <p className="logo-wall-label">Technologies we work with</p>
+            <div className="logo-wall-grid">
+              <Image src="/images/logos/chatgpt-text.png" alt="OpenAI" width={150} height={48} />
+              <Image src="/images/logos/claude-text.png" alt="Claude" width={150} height={48} />
+              <Image src="/images/logos/gemini-text.png" alt="Gemini" width={150} height={48} />
+              <Image src="/images/logos/wispr-text.png" alt="Wispr Flow" width={190} height={48} />
+              <Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={170} height={48} />
             </div>
           </div>
         </section>
@@ -165,6 +167,64 @@ export default function Home() {
               <div className="format-row"><div className="format-dur">30 min</div><div><h3>The week&apos;s education topic</h3><p>A focused session on one part of how real estate ownership works. No fluff.</p></div></div>
               <div className="format-row"><div className="format-dur">15 min</div><div><h3>What COMMUNE is doing today</h3><p>A look at where we&apos;re currently allocating capital and what we&apos;re building. Real assets, real markets, real numbers.</p></div></div>
               <div className="format-row"><div className="format-dur">15 to 30 min</div><div><h3>Live Q&amp;A</h3><p>Ask the team anything. We stay until the questions are done.</p></div></div>
+            </div>
+          </div>
+        </section>
+        <section className="pricing-section" id="pricing" data-screen-label="Pricing">
+          <div className="shell pricing-shell">
+            <div className="section-heading">
+              <span className="eyebrow">Pricing</span>
+              <h2>No more budget worries<br />—simple and flexible.</h2>
+              <p>Choose between ongoing AI implementation support and one-time fixed-scope projects.</p>
+            </div>
+            <div className="pricing-toggle" aria-label="Pricing options">
+              <span className="active">Monthly Retainer</span>
+              <span>One-Off Project</span>
+            </div>
+            <div className="pricing-panel">
+              <div className="pricing-benefits">
+                <ul>
+                  <li>Continuous AI workflow discovery, design, and implementation support.</li>
+                  <li>Priority access to a dedicated AI workflow team each month.</li>
+                  <li>Weekly strategy and delivery check-ins to keep momentum high.</li>
+                  <li>Roadmap management across agents, automations, tools, and data connections.</li>
+                  <li>Specialized expertise in AI agents, automations, and operational systems.</li>
+                </ul>
+                <p>We keep it simple and flexible.</p>
+                <span className="pricing-note">Location and time: Los Angeles (PST)</span>
+              </div>
+              <article className="pricing-card">
+                <div className="availability"><span aria-hidden="true" />4 slots available</div>
+                <h3>Monthly AI Retainer</h3>
+                <p>Ongoing strategy, implementation, and optimization support for teams building AI into daily operations.</p>
+                <div className="pricing-rule" />
+                <div className="price">$8,000 <span>/ month</span></div>
+                <a className="btn" href="#reserve" data-anchor-cta="">Start your monthly retainer</a>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section className="faq-section" id="faqs" data-screen-label="FAQ">
+          <div className="shell faq-shell">
+            <span className="eyebrow">FAQ</span>
+            <h2>Common questions</h2>
+            <div className="faq-list">
+              <details>
+                <summary>What is included in a monthly retainer?</summary>
+                <p>Strategy, workflow design, implementation support, weekly check-ins, and roadmap management across AI tools, automations, agents, and data connections.</p>
+              </details>
+              <details>
+                <summary>How is a one-off project scoped?</summary>
+                <p>We define a fixed outcome, timeline, and deliverables before work begins so your team knows exactly what will be built and implemented.</p>
+              </details>
+              <details>
+                <summary>Can you work with our existing tools and data?</summary>
+                <p>Yes. We design around your current systems and identify practical integrations that improve daily operations without unnecessary tool sprawl.</p>
+              </details>
+              <details>
+                <summary>How soon can we start?</summary>
+                <p>Most engagements begin with a discovery call, followed by a short implementation plan and kickoff once scope and availability are confirmed.</p>
+              </details>
             </div>
           </div>
         </section>
