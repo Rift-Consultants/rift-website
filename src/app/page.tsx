@@ -67,20 +67,6 @@ export default function Home() {
                     <span>Applied AI Strategy Team</span>
                   </div>
                 </div>
-                <div className="speaker-item">
-                  <Image
-                    className="speaker-avatar"
-                    src="/images/ava2.png"
-                    alt="Kenny Mack speaker avatar"
-                    width={44}
-                    height={44}
-                    style={{ objectFit: 'cover' }}
-                  />
-                  <div>
-                    <strong>Kenny Mack</strong>
-                    <span>Applied AI Engineer</span>
-                  </div>
-                </div>
               </div>
               <div className="webinar-date">
                 <svg viewBox="0 0 24 24" aria-hidden="true">
