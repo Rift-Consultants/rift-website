@@ -15,13 +15,37 @@ export default function ScrollHeaderState() {
     };
 
     updateHeaderState();
+    const menuToggle = document.querySelector<HTMLInputElement>('.menu-toggle');
+    const menuLinks = document.querySelectorAll<HTMLAnchorElement>('.main-nav a');
+
+    const updateMenuState = () => {
+      body.classList.toggle('mobile-menu-open', Boolean(menuToggle?.checked));
+    };
+
+    const closeMenu = () => {
+      if (!menuToggle) return;
+      menuToggle.checked = false;
+      updateMenuState();
+    };
+
+    const closeMenuOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') closeMenu();
+    };
+
+    updateMenuState();
     window.addEventListener('scroll', updateHeaderState, { passive: true });
     window.addEventListener('resize', updateHeaderState);
+    menuToggle?.addEventListener('change', updateMenuState);
+    menuLinks.forEach((link) => link.addEventListener('click', closeMenu));
+    window.addEventListener('keydown', closeMenuOnEscape);
 
     return () => {
-      body.classList.remove('has-fixed-topbar');
+      body.classList.remove('has-fixed-topbar', 'mobile-menu-open');
       window.removeEventListener('scroll', updateHeaderState);
       window.removeEventListener('resize', updateHeaderState);
+      menuToggle?.removeEventListener('change', updateMenuState);
+      menuLinks.forEach((link) => link.removeEventListener('click', closeMenu));
+      window.removeEventListener('keydown', closeMenuOnEscape);
     };
   }, []);
 
