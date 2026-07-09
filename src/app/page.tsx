@@ -108,6 +108,7 @@ export default function Home() {
         <section className="featured learn-section" data-screen-label="What you'll learn">
           <div className="shell learn-shell">
             <div className="featured-copy learn-copy">
+              <span className="eyebrow">Workshop</span>
               <h2>What you&rsquo;ll learn</h2>
               <div className="learn-list">
                 <div className="learn-item">
