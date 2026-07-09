@@ -7,6 +7,7 @@ export default function Home() {
       <header className="topbar">
         <div className="topbar-inner">
           <a className="wordmark" href="#top" aria-label="AgentHappy home">AGENT<span>HAPPY</span></a>
+          <input className="menu-toggle" type="checkbox" id="mobile-menu-toggle" aria-label="Toggle navigation menu" />
           <nav className="main-nav" aria-label="Primary navigation">
             <a href="/services">Services</a>
             <a href="/industries">Industries</a>
@@ -16,6 +17,11 @@ export default function Home() {
             <a href="#faqs">FAQs</a>
           </nav>
           <a className="nav-cta" href="#reserve">Talk to us</a>
+          <label className="menu-button" htmlFor="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </label>
         </div>
       </header>
       <ScrollHeaderState />
