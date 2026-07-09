@@ -54,14 +54,28 @@ export default function Home() {
               <p className="body">Join AgentHappy for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
               <div className="speaker-row" aria-label="Webinar speakers">
                 <div className="speaker-item">
-                  <span className="speaker-avatar" aria-hidden="true">RC</span>
+                  <Image
+                    className="speaker-avatar"
+                    src="/images/ava1.jpg"
+                    alt="Rift Consultants speaker avatar"
+                    width={44}
+                    height={44}
+                    style={{ objectFit: 'cover' }}
+                  />
                   <div>
                     <strong>Rift Consultants</strong>
                     <span>Applied AI Strategy Team</span>
                   </div>
                 </div>
                 <div className="speaker-item">
-                  <span className="speaker-avatar" aria-hidden="true">IT</span>
+                  <Image
+                    className="speaker-avatar"
+                    src="/images/ava2.png"
+                    alt="Kenny Mack speaker avatar"
+                    width={44}
+                    height={44}
+                    style={{ objectFit: 'cover' }}
+                  />
                   <div>
                     <strong>Kenny Mack</strong>
                     <span>Applied AI Engineer</span>
