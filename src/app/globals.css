@@ -47,3 +47,10 @@ body:before,.noise:before{background-size:160px 160px}body:before{opacity:.18}
 @media (max-width:860px){
   .logo-wall{margin-top:clamp(96px,18vh,160px);padding:22px 0 28px}
 }
+
+/* Logo wall eyebrow and bordered tiles */
+.logo-wall-label.eyebrow{color:var(--accent);letter-spacing:var(--tracking-eyebrow);font-weight:var(--fw-medium)}
+.logo-tile{display:inline-flex;align-items:center;justify-content:center;flex:0 0 auto;min-width:136px;height:48px;padding:11px 16px;border:1px solid var(--border-soft);border-radius:10px;background:rgba(255,255,255,.018)}
+.logo-tile img{height:24px;max-width:120px;width:auto;object-fit:contain;filter:grayscale(1) invert(1);opacity:.74}
+.faq-list summary:after{border-color:currentColor;color:currentColor}
+@media (max-width:860px){.logo-tile{min-width:0;width:100%;height:44px;padding:10px 12px}.logo-tile img{height:20px;max-width:100%}}
