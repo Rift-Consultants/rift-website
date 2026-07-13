@@ -73,3 +73,7 @@ body:before,.noise:before{background-size:160px 160px}body:before{opacity:.18}
 /* Square off bordered UI surfaces to match the navbar CTA */
 :root{--radius-xs:0;--radius-sm:0;--radius-md:0;--radius-lg:0;--radius-xl:0;--radius-pill:0}
 .logo-wall-grid,.logo-tile,.webinar-card,.webinar-card input[type=text],.webinar-card input[type=email],.webinar-date,.speaker-item,.pricing-toggle,.pricing-panel,.pricing-card,.pricing-note,.availability,.reprompt-inner,.hs-embed-wrap,.confirm-card,.assistant-card,.assistant-input,.suggestion-row span,.playbook-grid div,.footer-social a,.faq-list summary:after,.learn-visual,.consulting-visual,.footer-cta-button,.hero-locator{border-radius:0}
+
+/* Match pricing availability bulbs to the LIVE WEBINAR pulsing orb */
+.availability span{width:9px;height:9px;flex:0 0 9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 rgba(217,168,108,.55),0 0 12px rgba(217,168,108,.9);animation:livePulse 1.35s ease-in-out infinite}
+.availability span:after{content:none}
