@@ -83,7 +83,7 @@ export default function Home() {
                 <span>August 5, 2026 · 9:00 - 9:30 AM PT</span>
               </div>
             </div>
-            <form className="webinar-card">
+            <form className="webinar-card" action="/course-outline" method="get">
               <div className="field-grid">
                 <label>
                   <span>First name</span>
@@ -103,7 +103,7 @@ export default function Home() {
                 <span>I agree to receive webinar reminders and related resources from Rift Consultants.</span>
               </label>
               <p className="webinar-terms">By registering, you agree to receive communications about this event. Your information will be handled in accordance with our privacy practices, and you can unsubscribe at any time.</p>
-              <button className="btn" type="submit">Register Now</button>
+              <button className="btn" type="submit">Download course outline</button>
             </form>
           </div>
         </section>
