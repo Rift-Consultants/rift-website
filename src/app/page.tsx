@@ -49,8 +49,8 @@ export default function Home() {
               <span className="logo-tile"><Image src="/images/logos/gemini-text.png" alt="Gemini" width={150} height={48} /></span>
               <span className="logo-tile"><Image src="/images/logos/wispr-text.png" alt="Wispr Flow" width={190} height={48} /></span>
               <span className="logo-tile"><Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={170} height={48} /></span>
-              <span className="logo-tile"><Image src="/images/logos/glean-logo.png" alt="Glean" width={150} height={48} /></span>
-              <span className="logo-tile"><Image src="/images/logos/langchain-logo.png" alt="LangChain" width={170} height={48} /></span>
+              <span className="logo-tile"><Image className="logo-image-preserve" src="/images/logos/glean-logo.png" alt="Glean" width={150} height={48} /></span>
+              <span className="logo-tile"><Image className="logo-image-preserve" src="/images/logos/langchain-logo.png" alt="LangChain" width={170} height={48} /></span>
             </div>
           </div>
         </section>
