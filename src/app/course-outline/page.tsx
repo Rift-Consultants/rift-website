@@ -3,6 +3,7 @@ import Link from 'next/link';
 export default function CourseOutlinePage() {
   return (
     <>
+      <div className="course-offer-bar" role="status">Enroll by July 21, 2026 at 11:59 PM to receive 10% off.</div>
       <header className="topbar course-topbar">
         <div className="topbar-inner course-topbar-inner">
           <Link className="wordmark" href="/" aria-label="AgentHappy home">AGENT<span>HAPPY</span></Link>
