@@ -32,14 +32,21 @@ export default function CourseOutlinePage() {
                   </a>
                 </nav>
               </aside>
-              <section className="course-card-panel course-card-next" aria-label="Continue registration">
+              <section className="course-card-panel course-card-next" aria-label="Create an account to continue registration">
                 <p className="eyebrow course-eyebrow">Next step</p>
-                <h2>Download your course outline and choose the best follow-up path.</h2>
-                <p>Use the links on this page to review the course outline, talk through fit with a consultant, or learn how referral benefits work. We&rsquo;ll continue expanding this page with FAQs, the full outline accordion, and registration details.</p>
-                <div className="course-next-actions">
-                  <a className="btn" href="/downloads/agenthappy-course-outline.pdf" download>Download outline</a>
-                  <a className="btn btn-secondary" href="#schedule-call">Schedule a call</a>
-                </div>
+                <h2>Create your account to continue registration.</h2>
+                <p>Your course outline preview is ready. Set a password now so you can register for the course and return to your application at any time.</p>
+                <form className="course-account-form" action="#register" method="post">
+                  <label>
+                    <span>Email</span>
+                    <input type="email" name="email" autoComplete="email" placeholder="you@company.com" />
+                  </label>
+                  <label>
+                    <span>Password</span>
+                    <input type="password" name="password" autoComplete="new-password" placeholder="Set password" />
+                  </label>
+                  <button className="btn" type="submit">Create account</button>
+                </form>
               </section>
             </div>
           </div>
