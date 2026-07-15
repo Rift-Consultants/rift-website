@@ -9,8 +9,8 @@ export default function Home() {
           <a className="wordmark" href="#top" aria-label="AgentHappy home">AGENT<span>HAPPY</span></a>
           <input className="menu-toggle" type="checkbox" id="mobile-menu-toggle" aria-label="Toggle navigation menu" />
           <nav className="main-nav" aria-label="Primary navigation">
-            <a href="/services">Services</a>
-            <a href="/industries">Industries</a>
+            <a href="/training">Training</a>
+            <a href="/consulting">Consulting</a>
             <a href="/events">Events</a>
             <a href="#pricing">Pricing</a>
             <a href="/about">About</a>
@@ -42,13 +42,15 @@ export default function Home() {
         </section>
         <section className="logo-wall" aria-label="Technologies we work with">
           <div className="logo-wall-inner">
-            <p className="logo-wall-label">Technologies we work with</p>
+            <p className="eyebrow logo-wall-label">Technologies we work with</p>
             <div className="logo-wall-grid">
-              <Image src="/images/logos/chatgpt-text.png" alt="OpenAI" width={150} height={48} />
-              <Image src="/images/logos/claude-text.png" alt="Claude" width={150} height={48} />
-              <Image src="/images/logos/gemini-text.png" alt="Gemini" width={150} height={48} />
-              <Image src="/images/logos/wispr-text.png" alt="Wispr Flow" width={190} height={48} />
-              <Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={170} height={48} />
+              <span className="logo-tile"><Image src="/images/logos/chatgpt-text.png" alt="OpenAI" width={150} height={48} /></span>
+              <span className="logo-tile"><Image src="/images/logos/claude-text.png" alt="Claude" width={150} height={48} /></span>
+              <span className="logo-tile"><Image src="/images/logos/gemini-text.png" alt="Gemini" width={150} height={48} /></span>
+              <span className="logo-tile"><Image src="/images/logos/wispr-text.png" alt="Wispr Flow" width={190} height={48} /></span>
+              <span className="logo-tile"><Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={170} height={48} /></span>
+              <span className="logo-tile"><Image className="logo-image-preserve" src="/images/logos/glean-logo.png" alt="Glean" width={150} height={48} /></span>
+              <span className="logo-tile"><Image className="logo-image-preserve" src="/images/logos/langchain-logo.png" alt="LangChain" width={170} height={48} /></span>
             </div>
           </div>
         </section>
@@ -78,10 +80,10 @@ export default function Home() {
                 <svg viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M7 2v3M17 2v3M4 9h16M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
                 </svg>
-                <span>July 1, 2026 · 9:00 - 9:30 AM PT</span>
+                <span>August 5, 2026 · 9:00 - 9:30 AM PT</span>
               </div>
             </div>
-            <form className="webinar-card">
+            <form className="webinar-card" action="/course-outline" method="get">
               <div className="field-grid">
                 <label>
                   <span>First name</span>
@@ -101,7 +103,7 @@ export default function Home() {
                 <span>I agree to receive webinar reminders and related resources from Rift Consultants.</span>
               </label>
               <p className="webinar-terms">By registering, you agree to receive communications about this event. Your information will be handled in accordance with our privacy practices, and you can unsubscribe at any time.</p>
-              <button className="btn" type="submit">Register Now</button>
+              <button className="btn" type="submit">Download course outline</button>
             </form>
           </div>
         </section>
@@ -259,8 +261,8 @@ export default function Home() {
         <footer className="site-footer" data-screen-label="Footer CTA">
           <div className="shell footer-bottom">
             <nav aria-label="Footer navigation">
-              <a href="/services">Services</a>
-              <a href="/industries">Industries</a>
+              <a href="/training">Training</a>
+              <a href="/consulting">Consulting</a>
               <a href="/events">Events</a>
               <a href="#pricing">Pricing</a>
               <a href="/about">About</a>
