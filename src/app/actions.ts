@@ -15,12 +15,14 @@ export async function registerForWebinar(formData: FormData) {
   const marketingConsent = formData.get('marketingConsent') === 'on';
   const requestedDate = normalizeOptionalText(formData.get('requestedDate'));
   const requestedTime = normalizeOptionalText(formData.get('requestedTime'));
+  const meetingReason = normalizeOptionalText(formData.get('meetingReason'));
 
   if (!email) {
     throw new Error('Email is required.');
   }
 
   const signupId = crypto.randomUUID();
+  const source = requestedDate && requestedTime ? 'website_calendar_booking' : 'website_webinar_form';
 
   await insertSupabaseRow({
     table: 'web_signups',
@@ -30,7 +32,7 @@ export async function registerForWebinar(formData: FormData) {
       last_name: lastName,
       email,
       marketing_consent: marketingConsent,
-      source: 'website_webinar_form',
+      source,
     },
   });
 
@@ -44,6 +46,7 @@ export async function registerForWebinar(formData: FormData) {
         timezone: 'America/Los_Angeles',
         meeting_type: 'discovery_call',
         status: 'requested',
+        notes: meetingReason,
       },
     });
   }
