@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import ScrollHeaderState from './scroll-header-state';
+import { registerForWebinar } from './actions';
 
 export const dynamic = 'force-dynamic';
 
@@ -23,7 +24,11 @@ function getBusinessDays(startDate: Date, count: number) {
   return days;
 }
 
-function buildCalendarDays(availableDays: Date[]) {
+function formatDateKey(date: Date) {
+  return date.toISOString().slice(0, 10);
+}
+
+function buildCalendarDays(availableDays: Date[], selectedDay: Date) {
   const firstAvailable = availableDays[0];
   const lastAvailable = availableDays[availableDays.length - 1];
   const start = new Date(firstAvailable.getFullYear(), firstAvailable.getMonth(), 1);
@@ -39,7 +44,7 @@ function buildCalendarDays(availableDays: Date[]) {
     days.push({
       date: new Date(cursor),
       isAvailable: availableKeys.has(cursor.toDateString()),
-      isSelected: cursor.toDateString() === firstAvailable.toDateString(),
+      isSelected: cursor.toDateString() === selectedDay.toDateString(),
       isCurrentMonth: cursor.getMonth() === firstAvailable.getMonth(),
       monthLabel: cursor.getDate() === 1 ? cursor.toLocaleString('en-US', { month: 'short' }).toUpperCase() : null,
     });
@@ -49,10 +54,21 @@ function buildCalendarDays(availableDays: Date[]) {
   return days;
 }
 
-export default function Home() {
+type HomeProps = {
+  searchParams?: Promise<{
+    date?: string;
+    time?: string;
+  }>;
+};
+
+export default async function Home({ searchParams }: HomeProps) {
+  const params = await searchParams;
   const availableBusinessDays = getBusinessDays(new Date(), 12);
-  const calendarDays = buildCalendarDays(availableBusinessDays);
-  const selectedDay = availableBusinessDays[0];
+  const requestedDay = availableBusinessDays.find((day) => formatDateKey(day) === params?.date);
+  const selectedDay = requestedDay ?? availableBusinessDays[0];
+  const selectedTime = timeSlots.includes(params?.time ?? '') ? params?.time : null;
+  const selectedDateKey = formatDateKey(selectedDay);
+  const calendarDays = buildCalendarDays(availableBusinessDays, selectedDay);
 
   return (
     <>
@@ -135,7 +151,7 @@ export default function Home() {
                 <span>August 5, 2026 · 9:00 - 9:30 AM PT</span>
               </div>
             </div>
-            <form className="webinar-card" action="/course-outline" method="get">
+            <form className="webinar-card" action={registerForWebinar}>
               <div className="field-grid">
                 <label>
                   <span>First name</span>
@@ -148,12 +164,15 @@ export default function Home() {
               </div>
               <label>
                 <span>Work email</span>
-                <input type="email" name="email" autoComplete="email" />
+                <input type="email" name="email" autoComplete="email" required />
               </label>
               <label className="consent-row">
                 <input type="checkbox" name="marketingConsent" defaultChecked />
                 <span>I agree to receive webinar reminders and related resources from Rift Consultants.</span>
               </label>
+              <input type="hidden" name="requestedDate" value={selectedDateKey} />
+              <input type="hidden" name="requestedTime" value={selectedTime ?? ''} />
+              <p className="webinar-terms">{selectedTime ? `Selected discovery call: ${dayHeaderFormatter.format(selectedDay)} at ${selectedTime} PT.` : 'Select a discovery slot below if you want us to include a preferred meeting time with your signup.'}</p>
               <p className="webinar-terms">By registering, you agree to receive communications about this event. Your information will be handled in accordance with our privacy practices, and you can unsubscribe at any time.</p>
               <button className="btn" type="submit">Download course outline</button>
             </form>
@@ -352,19 +371,32 @@ export default function Home() {
                   {weekdayLabels.map((day) => <span key={day}>{day}</span>)}
                 </div>
                 <div className="calendar-grid">
-                  {calendarDays.map((day) => (
-                    <button
-                      className={`calendar-day${day.isAvailable ? ' is-available' : ''}${day.isSelected ? ' is-selected' : ''}${day.isCurrentMonth ? '' : ' is-muted'}`}
-                      type="button"
-                      key={day.date.toISOString()}
-                      disabled={!day.isAvailable}
-                      aria-label={`${day.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}${day.isAvailable ? ' available' : ' unavailable'}`}
-                    >
-                      <span>{day.date.getDate()}</span>
-                      {day.isSelected ? <i aria-hidden="true" /> : null}
-                      {day.monthLabel ? <em>{day.monthLabel}</em> : null}
-                    </button>
-                  ))}
+                  {calendarDays.map((day) => {
+                    const dayLabel = `${day.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}${day.isAvailable ? ' available' : ' unavailable'}`;
+                    const dayClassName = `calendar-day${day.isAvailable ? ' is-available' : ''}${day.isSelected ? ' is-selected' : ''}${day.isCurrentMonth ? '' : ' is-muted'}`;
+
+                    if (!day.isAvailable) {
+                      return (
+                        <span className={dayClassName} key={day.date.toISOString()} aria-label={dayLabel}>
+                          <span>{day.date.getDate()}</span>
+                          {day.monthLabel ? <em>{day.monthLabel}</em> : null}
+                        </span>
+                      );
+                    }
+
+                    return (
+                      <a
+                        className={dayClassName}
+                        href={`/?date=${formatDateKey(day.date)}#book-a-call`}
+                        key={day.date.toISOString()}
+                        aria-label={dayLabel}
+                      >
+                        <span>{day.date.getDate()}</span>
+                        {day.isSelected ? <i aria-hidden="true" /> : null}
+                        {day.monthLabel ? <em>{day.monthLabel}</em> : null}
+                      </a>
+                    );
+                  })}
                 </div>
               </div>
               <aside className="calendar-times">
@@ -373,7 +405,7 @@ export default function Home() {
                   <div className="time-toggle" aria-label="Time format"><span>12h</span><span>24h</span></div>
                 </div>
                 <div className="time-list">
-                  {timeSlots.map((slot) => <a href="#reserve" key={slot}>{slot}</a>)}
+                  {timeSlots.map((slot) => <a href={`/?date=${selectedDateKey}&time=${encodeURIComponent(slot)}#reserve`} key={slot}>{slot}</a>)}
                 </div>
               </aside>
             </div>
