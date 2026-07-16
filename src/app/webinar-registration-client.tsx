@@ -55,15 +55,8 @@ function buildCalendarDays(availableDays: Date[], selectedDay: Date) {
 }
 
 export default function WebinarRegistrationClient() {
-  const availableBusinessDays = useMemo(() => getBusinessDays(new Date(), 12), []);
-  const [selectedDateKey, setSelectedDateKey] = useState(() => formatDateKey(availableBusinessDays[0]));
-  const [selectedTime, setSelectedTime] = useState<string | null>(null);
-  const selectedDay = availableBusinessDays.find((day) => formatDateKey(day) === selectedDateKey) ?? availableBusinessDays[0];
-  const calendarDays = buildCalendarDays(availableBusinessDays, selectedDay);
-
   return (
-    <>
-      <section className="webinar" data-screen-label="Webinar registration">
+    <section className="webinar" data-screen-label="Webinar registration">
         <div className="shell webinar-shell">
           <div className="webinar-copy">
             <span className="eyebrow webinar-eyebrow"><span className="live-dot" aria-hidden="true" />LIVE WEBINAR</span>
@@ -85,7 +78,7 @@ export default function WebinarRegistrationClient() {
               <span>August 5, 2026 · 9:00 - 9:30 AM PT</span>
             </div>
           </div>
-          <form className="webinar-card" action={registerForWebinar}>
+          <form className="webinar-card" id="webinar-registration-form" action={registerForWebinar}>
             <div className="field-grid">
               <label><span>First name</span><input type="text" name="firstName" autoComplete="given-name" /></label>
               <label><span>Last name</span><input type="text" name="lastName" autoComplete="family-name" /></label>
@@ -95,14 +88,26 @@ export default function WebinarRegistrationClient() {
               <input type="checkbox" name="marketingConsent" defaultChecked />
               <span>I agree to receive webinar reminders and related resources from Rift Consultants.</span>
             </label>
-            <input type="hidden" name="requestedDate" value={selectedDateKey} />
-            <input type="hidden" name="requestedTime" value={selectedTime ?? ''} />
-            <p className="webinar-terms">{selectedTime ? `Selected discovery call: ${dayHeaderFormatter.format(selectedDay)} at ${selectedTime} PT.` : 'Select a discovery slot below if you want us to include a preferred meeting time with your signup.'}</p>
+            <p className="webinar-terms">You can choose a discovery slot in the calendar near the footer before submitting your details.</p>
             <p className="webinar-terms">By registering, you agree to receive communications about this event. Your information will be handled in accordance with our privacy practices, and you can unsubscribe at any time.</p>
             <button className="btn" type="submit">Download course outline</button>
           </form>
         </div>
-      </section>
+    </section>
+  );
+}
+
+export function BookingCalendarClient() {
+  const availableBusinessDays = useMemo(() => getBusinessDays(new Date(), 12), []);
+  const [selectedDateKey, setSelectedDateKey] = useState(() => formatDateKey(availableBusinessDays[0]));
+  const [selectedTime, setSelectedTime] = useState<string | null>(null);
+  const selectedDay = availableBusinessDays.find((day) => formatDateKey(day) === selectedDateKey) ?? availableBusinessDays[0];
+  const calendarDays = buildCalendarDays(availableBusinessDays, selectedDay);
+
+  return (
+    <>
+      <input type="hidden" form="webinar-registration-form" name="requestedDate" value={selectedDateKey} />
+      <input type="hidden" form="webinar-registration-form" name="requestedTime" value={selectedTime ?? ''} />
       <BookingCalendar
         calendarDays={calendarDays}
         selectedDay={selectedDay}

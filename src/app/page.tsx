@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import ScrollHeaderState from './scroll-header-state';
-import WebinarRegistrationClient from './webinar-registration-client';
+import WebinarRegistrationClient, { BookingCalendarClient } from './webinar-registration-client';
 
 export const dynamic = 'force-dynamic';
 
@@ -210,6 +210,7 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <BookingCalendarClient />
         <footer className="site-footer" data-screen-label="Footer CTA">
           <div className="shell footer-bottom">
             <nav aria-label="Footer navigation">
