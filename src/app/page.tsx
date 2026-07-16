@@ -1,75 +1,10 @@
 import Image from 'next/image';
 import ScrollHeaderState from './scroll-header-state';
-import { registerForWebinar } from './actions';
+import WebinarRegistrationClient from './webinar-registration-client';
 
 export const dynamic = 'force-dynamic';
 
-const timeSlots = ['10:30am', '10:45am', '11:00am', '11:15am', '11:30am', '11:45am'];
-const weekdayLabels = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
-const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
-const dayHeaderFormatter = new Intl.DateTimeFormat('en-US', { weekday: 'short', day: 'numeric' });
-
-function getBusinessDays(startDate: Date, count: number) {
-  const days: Date[] = [];
-  const cursor = new Date(startDate);
-
-  while (days.length < count) {
-    const day = cursor.getDay();
-    if (day !== 0 && day !== 6) {
-      days.push(new Date(cursor));
-    }
-    cursor.setDate(cursor.getDate() + 1);
-  }
-
-  return days;
-}
-
-function formatDateKey(date: Date) {
-  return date.toISOString().slice(0, 10);
-}
-
-function buildCalendarDays(availableDays: Date[], selectedDay: Date) {
-  const firstAvailable = availableDays[0];
-  const lastAvailable = availableDays[availableDays.length - 1];
-  const start = new Date(firstAvailable.getFullYear(), firstAvailable.getMonth(), 1);
-  start.setDate(start.getDate() - start.getDay());
-  const end = new Date(lastAvailable.getFullYear(), lastAvailable.getMonth() + 1, 0);
-  end.setDate(end.getDate() + (6 - end.getDay()));
-
-  const availableKeys = new Set(availableDays.map((day) => day.toDateString()));
-  const days = [];
-  const cursor = new Date(start);
-
-  while (cursor <= end) {
-    days.push({
-      date: new Date(cursor),
-      isAvailable: availableKeys.has(cursor.toDateString()),
-      isSelected: cursor.toDateString() === selectedDay.toDateString(),
-      isCurrentMonth: cursor.getMonth() === firstAvailable.getMonth(),
-      monthLabel: cursor.getDate() === 1 ? cursor.toLocaleString('en-US', { month: 'short' }).toUpperCase() : null,
-    });
-    cursor.setDate(cursor.getDate() + 1);
-  }
-
-  return days;
-}
-
-type HomeProps = {
-  searchParams?: Promise<{
-    date?: string;
-    time?: string;
-  }>;
-};
-
-export default async function Home({ searchParams }: HomeProps) {
-  const params = await searchParams;
-  const availableBusinessDays = getBusinessDays(new Date(), 12);
-  const requestedDay = availableBusinessDays.find((day) => formatDateKey(day) === params?.date);
-  const selectedDay = requestedDay ?? availableBusinessDays[0];
-  const selectedTime = timeSlots.includes(params?.time ?? '') ? params?.time : null;
-  const selectedDateKey = formatDateKey(selectedDay);
-  const calendarDays = buildCalendarDays(availableBusinessDays, selectedDay);
-
+export default function Home() {
   return (
     <>
       <header className="topbar">
@@ -122,62 +57,7 @@ export default async function Home({ searchParams }: HomeProps) {
             </div>
           </div>
         </section>
-        <section className="webinar" data-screen-label="Webinar registration">
-          <div className="shell webinar-shell">
-            <div className="webinar-copy">
-              <span className="eyebrow webinar-eyebrow"><span className="live-dot" aria-hidden="true" />LIVE WEBINAR</span>
-              <h2>IT&rsquo;s Time to Build:<br /><em>Your First IT Agent</em></h2>
-              <p className="body">Join AgentHappy for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
-              <div className="speaker-row" aria-label="Webinar speakers">
-                <div className="speaker-item">
-                  <Image
-                    className="speaker-avatar"
-                    src="/images/ava1.jpg"
-                    alt="Rift Consultants speaker avatar"
-                    width={44}
-                    height={44}
-                    style={{ objectFit: 'cover' }}
-                  />
-                  <div>
-                    <strong>Rift Consultants</strong>
-                    <span>Applied AI Strategy Team</span>
-                  </div>
-                </div>
-              </div>
-              <div className="webinar-date">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M7 2v3M17 2v3M4 9h16M6 5h12a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2Z" />
-                </svg>
-                <span>August 5, 2026 · 9:00 - 9:30 AM PT</span>
-              </div>
-            </div>
-            <form className="webinar-card" action={registerForWebinar}>
-              <div className="field-grid">
-                <label>
-                  <span>First name</span>
-                  <input type="text" name="firstName" autoComplete="given-name" />
-                </label>
-                <label>
-                  <span>Last name</span>
-                  <input type="text" name="lastName" autoComplete="family-name" />
-                </label>
-              </div>
-              <label>
-                <span>Work email</span>
-                <input type="email" name="email" autoComplete="email" required />
-              </label>
-              <label className="consent-row">
-                <input type="checkbox" name="marketingConsent" defaultChecked />
-                <span>I agree to receive webinar reminders and related resources from Rift Consultants.</span>
-              </label>
-              <input type="hidden" name="requestedDate" value={selectedDateKey} />
-              <input type="hidden" name="requestedTime" value={selectedTime ?? ''} />
-              <p className="webinar-terms">{selectedTime ? `Selected discovery call: ${dayHeaderFormatter.format(selectedDay)} at ${selectedTime} PT.` : 'Select a discovery slot below if you want us to include a preferred meeting time with your signup.'}</p>
-              <p className="webinar-terms">By registering, you agree to receive communications about this event. Your information will be handled in accordance with our privacy practices, and you can unsubscribe at any time.</p>
-              <button className="btn" type="submit">Download course outline</button>
-            </form>
-          </div>
-        </section>
+        <WebinarRegistrationClient />
         <section className="featured learn-section" data-screen-label="What you'll learn">
           <div className="shell learn-shell">
             <div className="featured-copy learn-copy">
@@ -327,87 +207,6 @@ export default async function Home({ searchParams }: HomeProps) {
                 <p>Join us this Wednesday at 5pm PT. Register once and you are on the list — the join link arrives by email before every call.</p>
               </div>
               <a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a>
-            </div>
-          </div>
-        </section>
-        <section className="booking-section" id="book-a-call" data-screen-label="Calendar booking">
-          <div className="shell booking-shell">
-            <div className="section-heading booking-heading">
-              <span className="eyebrow">Book a call</span>
-              <h2>Choose a discovery slot.</h2>
-              <p>Pick from the next 12 business days so we can talk through your AI goals, blockers, and fastest path to implementation.</p>
-            </div>
-            <div className="calendar-card" aria-label="Meeting calendar">
-              <aside className="calendar-profile">
-                <Image
-                  className="calendar-avatar"
-                  src="/images/ava1.jpg"
-                  alt="Rift Consultants avatar"
-                  width={44}
-                  height={44}
-                  style={{ objectFit: 'cover' }}
-                />
-                <p className="calendar-host">Rift Consultants</p>
-                <h3>Meeting with AgentHappy</h3>
-                <p className="calendar-intro">In this call, we&apos;ll dive into:</p>
-                <ul>
-                  <li>Your business and goals</li>
-                  <li>Challenges to solve</li>
-                  <li>Your current AI workflows</li>
-                  <li>How we can help you</li>
-                </ul>
-                <div className="calendar-meta-list">
-                  <div className="calendar-meta"><span aria-hidden="true">◷</span><strong>15m</strong></div>
-                  <div className="calendar-meta"><span aria-hidden="true">▣</span>Google Meet</div>
-                  <div className="calendar-meta"><span aria-hidden="true">◎</span>America/Los Angeles</div>
-                </div>
-              </aside>
-              <div className="calendar-month">
-                <div className="calendar-month-bar">
-                  <h3>{monthFormatter.format(selectedDay)}</h3>
-                  <div className="calendar-arrows" aria-hidden="true"><span>‹</span><span>›</span></div>
-                </div>
-                <div className="calendar-weekdays" aria-hidden="true">
-                  {weekdayLabels.map((day) => <span key={day}>{day}</span>)}
-                </div>
-                <div className="calendar-grid">
-                  {calendarDays.map((day) => {
-                    const dayLabel = `${day.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}${day.isAvailable ? ' available' : ' unavailable'}`;
-                    const dayClassName = `calendar-day${day.isAvailable ? ' is-available' : ''}${day.isSelected ? ' is-selected' : ''}${day.isCurrentMonth ? '' : ' is-muted'}`;
-
-                    if (!day.isAvailable) {
-                      return (
-                        <span className={dayClassName} key={day.date.toISOString()} aria-label={dayLabel}>
-                          <span>{day.date.getDate()}</span>
-                          {day.monthLabel ? <em>{day.monthLabel}</em> : null}
-                        </span>
-                      );
-                    }
-
-                    return (
-                      <a
-                        className={dayClassName}
-                        href={`/?date=${formatDateKey(day.date)}#book-a-call`}
-                        key={day.date.toISOString()}
-                        aria-label={dayLabel}
-                      >
-                        <span>{day.date.getDate()}</span>
-                        {day.isSelected ? <i aria-hidden="true" /> : null}
-                        {day.monthLabel ? <em>{day.monthLabel}</em> : null}
-                      </a>
-                    );
-                  })}
-                </div>
-              </div>
-              <aside className="calendar-times">
-                <div className="calendar-times-head">
-                  <h3>{dayHeaderFormatter.format(selectedDay)}</h3>
-                  <div className="time-toggle" aria-label="Time format"><span>12h</span><span>24h</span></div>
-                </div>
-                <div className="time-list">
-                  {timeSlots.map((slot) => <a href={`/?date=${selectedDateKey}&time=${encodeURIComponent(slot)}#reserve`} key={slot}>{slot}</a>)}
-                </div>
-              </aside>
             </div>
           </div>
         </section>
