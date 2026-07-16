@@ -88,7 +88,7 @@ export default function WebinarRegistrationClient() {
               <input type="checkbox" name="marketingConsent" defaultChecked />
               <span>I agree to receive webinar reminders and related resources from Rift Consultants.</span>
             </label>
-            <p className="webinar-terms">You can choose a discovery slot in the calendar near the footer before submitting your details.</p>
+            <p className="webinar-terms">Want to talk through implementation? Choose a discovery slot in the calendar near the footer.</p>
             <p className="webinar-terms">By registering, you agree to receive communications about this event. Your information will be handled in accordance with our privacy practices, and you can unsubscribe at any time.</p>
             <button className="btn" type="submit">Download course outline</button>
           </form>
@@ -104,21 +104,77 @@ export function BookingCalendarClient() {
   const selectedDay = availableBusinessDays.find((day) => formatDateKey(day) === selectedDateKey) ?? availableBusinessDays[0];
   const calendarDays = buildCalendarDays(availableBusinessDays, selectedDay);
 
-  return (
-    <>
-      <input type="hidden" form="webinar-registration-form" name="requestedDate" value={selectedDateKey} />
-      <input type="hidden" form="webinar-registration-form" name="requestedTime" value={selectedTime ?? ''} />
-      <BookingCalendar
-        calendarDays={calendarDays}
+  if (selectedTime) {
+    return (
+      <BookingDetailsForm
         selectedDay={selectedDay}
+        selectedDateKey={selectedDateKey}
         selectedTime={selectedTime}
-        onSelectDate={(dateKey) => {
-          setSelectedDateKey(dateKey);
-          setSelectedTime(null);
-        }}
-        onSelectTime={setSelectedTime}
+        onChangeTime={() => setSelectedTime(null)}
       />
-    </>
+    );
+  }
+
+  return (
+    <BookingCalendar
+      calendarDays={calendarDays}
+      selectedDay={selectedDay}
+      selectedTime={selectedTime}
+      onSelectDate={(dateKey) => {
+        setSelectedDateKey(dateKey);
+        setSelectedTime(null);
+      }}
+      onSelectTime={setSelectedTime}
+    />
+  );
+}
+
+type BookingDetailsFormProps = {
+  selectedDay: Date;
+  selectedDateKey: string;
+  selectedTime: string;
+  onChangeTime: () => void;
+};
+
+function BookingDetailsForm({ selectedDay, selectedDateKey, selectedTime, onChangeTime }: BookingDetailsFormProps) {
+  return (
+    <section className="booking-section" id="book-a-call" data-screen-label="Calendar booking details">
+      <div className="shell booking-shell">
+        <div className="section-heading booking-heading">
+          <span className="eyebrow">Book a call</span>
+          <h2>Confirm your meeting.</h2>
+          <p>Tell us who is joining and what you want to cover so we can make the discovery call useful from the first minute.</p>
+        </div>
+        <form className="booking-details-card" action={registerForWebinar}>
+          <aside className="booking-details-summary">
+            <Image className="calendar-avatar" src="/images/ava1.jpg" alt="Rift Consultants avatar" width={44} height={44} style={{ objectFit: 'cover' }} />
+            <p className="calendar-host">Rift Consultants</p>
+            <h3>Meeting with AgentHappy</h3>
+            <div className="selected-slot" aria-label="Selected meeting time">
+              <span aria-hidden="true">◷</span>
+              <strong>{dayHeaderFormatter.format(selectedDay)} at {selectedTime} PT</strong>
+            </div>
+            <p className="calendar-intro">15 minute Google Meet discovery call.</p>
+            <button className="change-time-button" type="button" onClick={onChangeTime}>Change time</button>
+          </aside>
+          <div className="booking-details-fields">
+            <input type="hidden" name="requestedDate" value={selectedDateKey} />
+            <input type="hidden" name="requestedTime" value={selectedTime} />
+            <div className="field-grid">
+              <label><span>First name</span><input type="text" name="firstName" autoComplete="given-name" required /></label>
+              <label><span>Last name</span><input type="text" name="lastName" autoComplete="family-name" required /></label>
+            </div>
+            <label><span>Work email</span><input type="email" name="email" autoComplete="email" required /></label>
+            <label><span>Reason for meeting</span><textarea name="meetingReason" rows={5} placeholder="Tell us about your AI goals, blockers, or the workflow you want to improve." required /></label>
+            <label className="consent-row">
+              <input type="checkbox" name="marketingConsent" defaultChecked />
+              <span>I agree to receive meeting follow-up and related resources from Rift Consultants.</span>
+            </label>
+            <button className="btn" type="submit">Schedule meeting</button>
+          </div>
+        </form>
+      </div>
+    </section>
   );
 }
 
