@@ -300,6 +300,17 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="reprompt" data-screen-label="Closing CTA">
+          <div className="shell">
+            <div className="reprompt-inner">
+              <div>
+                <h2>Take the next step.</h2>
+                <p>Join us this Wednesday at 5pm PT. Register once and you are on the list — the join link arrives by email before every call.</p>
+              </div>
+              <a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a>
+            </div>
+          </div>
+        </section>
         <section className="booking-section" id="book-a-call" data-screen-label="Calendar booking">
           <div className="shell booking-shell">
             <div className="section-heading booking-heading">
@@ -365,17 +376,6 @@ export default function Home() {
                   {timeSlots.map((slot) => <a href="#reserve" key={slot}>{slot}</a>)}
                 </div>
               </aside>
-            </div>
-          </div>
-        </section>
-        <section className="reprompt" data-screen-label="Closing CTA">
-          <div className="shell">
-            <div className="reprompt-inner">
-              <div>
-                <h2>Take the next step.</h2>
-                <p>Join us this Wednesday at 5pm PT. Register once and you are on the list — the join link arrives by email before every call.</p>
-              </div>
-              <a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a>
             </div>
           </div>
         </section>
