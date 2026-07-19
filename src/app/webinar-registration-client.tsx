@@ -6,6 +6,7 @@ import { registerForWebinar } from './actions';
 
 const timeSlots = ['10:30am', '10:45am', '11:00am', '11:15am', '11:30am', '11:45am'];
 const weekdayLabels = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
+const calendarWindowDays = 30;
 const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
 const dayHeaderFormatter = new Intl.DateTimeFormat('en-US', { weekday: 'short', day: 'numeric' });
 
@@ -28,27 +29,37 @@ function formatDateKey(date: Date) {
   return date.toISOString().slice(0, 10);
 }
 
-function buildCalendarDays(availableDays: Date[], selectedDay: Date) {
+type CalendarDate = {
+  isPlaceholder?: false;
+  date: Date;
+  isAvailable: boolean;
+  isSelected: boolean;
+  isCurrentMonth: boolean;
+  monthLabel: string | null;
+};
+
+type CalendarPlaceholder = { isPlaceholder: true };
+
+function buildCalendarDays(availableDays: Date[], selectedDay: Date): Array<CalendarDate | CalendarPlaceholder> {
   const firstAvailable = availableDays[0];
-  const lastAvailable = availableDays[availableDays.length - 1];
-  const start = new Date(firstAvailable.getFullYear(), firstAvailable.getMonth(), 1);
-  start.setDate(start.getDate() - start.getDay());
-  const end = new Date(lastAvailable.getFullYear(), lastAvailable.getMonth() + 1, 0);
-  end.setDate(end.getDate() + (6 - end.getDay()));
-
   const availableKeys = new Set(availableDays.map((day) => day.toDateString()));
-  const days = [];
-  const cursor = new Date(start);
+  const start = new Date(firstAvailable);
+  const days: Array<CalendarDate | CalendarPlaceholder> = [];
 
-  while (cursor <= end) {
+  for (let index = 0; index < start.getDay(); index += 1) {
+    days.push({ isPlaceholder: true });
+  }
+
+  for (let index = 0; index < calendarWindowDays; index += 1) {
+    const date = new Date(start);
+    date.setDate(start.getDate() + index);
     days.push({
-      date: new Date(cursor),
-      isAvailable: availableKeys.has(cursor.toDateString()),
-      isSelected: cursor.toDateString() === selectedDay.toDateString(),
-      isCurrentMonth: cursor.getMonth() === firstAvailable.getMonth(),
-      monthLabel: cursor.getDate() === 1 ? cursor.toLocaleString('en-US', { month: 'short' }).toUpperCase() : null,
+      date,
+      isAvailable: availableKeys.has(date.toDateString()),
+      isSelected: date.toDateString() === selectedDay.toDateString(),
+      isCurrentMonth: date.getMonth() === firstAvailable.getMonth(),
+      monthLabel: date.getDate() === 1 ? date.toLocaleString('en-US', { month: 'short' }).toUpperCase() : null,
     });
-    cursor.setDate(cursor.getDate() + 1);
   }
 
   return days;
@@ -64,9 +75,9 @@ export default function WebinarRegistrationClient() {
             <p className="body">Join AgentHappy for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
             <div className="speaker-row" aria-label="Webinar speakers">
               <div className="speaker-item">
-                <Image className="speaker-avatar" src="/images/ava1.jpg" alt="Rift Consultants speaker avatar" width={44} height={44} style={{ objectFit: 'cover' }} />
+                <Image className="speaker-avatar" src="/images/ava1.jpg" alt="Kenny Mack speaker avatar" width={44} height={44} style={{ objectFit: 'cover' }} />
                 <div>
-                  <strong>Rift Consultants</strong>
+                  <strong>Kenny Mack</strong>
                   <span>Applied AI Strategy Team</span>
                 </div>
               </div>
@@ -86,7 +97,7 @@ export default function WebinarRegistrationClient() {
             <label><span>Work email</span><input type="email" name="email" autoComplete="email" required /></label>
             <label className="consent-row">
               <input type="checkbox" name="marketingConsent" defaultChecked />
-              <span>I agree to receive webinar reminders and related resources from Rift Consultants.</span>
+              <span>I agree to receive webinar reminders and related resources from AgentHappy.</span>
             </label>
             <p className="webinar-terms">Want to talk through implementation? Choose a discovery slot in the calendar near the footer.</p>
             <p className="webinar-terms">By registering, you agree to receive communications about this event. Your information will be handled in accordance with our privacy practices, and you can unsubscribe at any time.</p>
@@ -147,8 +158,8 @@ function BookingDetailsForm({ selectedDay, selectedDateKey, selectedTime, onChan
         </div>
         <form className="booking-details-card" action={registerForWebinar}>
           <aside className="booking-details-summary">
-            <Image className="calendar-avatar" src="/images/ava1.jpg" alt="Rift Consultants avatar" width={44} height={44} style={{ objectFit: 'cover' }} />
-            <p className="calendar-host">Rift Consultants</p>
+            <Image className="calendar-avatar" src="/images/ava1.jpg" alt="Kenny Mack avatar" width={44} height={44} style={{ objectFit: 'cover' }} />
+            <p className="calendar-host">Kenny Mack</p>
             <h3>Meeting with AgentHappy</h3>
             <div className="selected-slot" aria-label="Selected meeting time">
               <span aria-hidden="true">◷</span>
@@ -168,7 +179,7 @@ function BookingDetailsForm({ selectedDay, selectedDateKey, selectedTime, onChan
             <label><span>Reason for meeting</span><textarea name="meetingReason" rows={5} placeholder="Tell us about your AI goals, blockers, or the workflow you want to improve." required /></label>
             <label className="consent-row">
               <input type="checkbox" name="marketingConsent" defaultChecked />
-              <span>I agree to receive meeting follow-up and related resources from Rift Consultants.</span>
+              <span>I agree to receive meeting follow-up and related resources from AgentHappy.</span>
             </label>
             <button className="btn" type="submit">Schedule meeting</button>
           </div>
@@ -199,8 +210,8 @@ function BookingCalendar({ calendarDays, selectedDay, selectedTime, onSelectDate
         </div>
         <div className="calendar-card" aria-label="Meeting calendar">
           <aside className="calendar-profile">
-            <Image className="calendar-avatar" src="/images/ava1.jpg" alt="Rift Consultants avatar" width={44} height={44} style={{ objectFit: 'cover' }} />
-            <p className="calendar-host">Rift Consultants</p>
+            <Image className="calendar-avatar" src="/images/ava1.jpg" alt="Kenny Mack avatar" width={44} height={44} style={{ objectFit: 'cover' }} />
+            <p className="calendar-host">Kenny Mack</p>
             <h3>Meeting with AgentHappy</h3>
             <p className="calendar-intro">In this call, we&apos;ll dive into:</p>
             <ul><li>Your business and goals</li><li>Challenges to solve</li><li>Your current AI workflows</li><li>How we can help you</li></ul>
@@ -214,7 +225,11 @@ function BookingCalendar({ calendarDays, selectedDay, selectedTime, onSelectDate
             <div className="calendar-month-bar"><h3>{monthFormatter.format(selectedDay)}</h3><div className="calendar-arrows" aria-hidden="true"><span>‹</span><span>›</span></div></div>
             <div className="calendar-weekdays" aria-hidden="true">{weekdayLabels.map((day) => <span key={day}>{day}</span>)}</div>
             <div className="calendar-grid">
-              {calendarDays.map((day) => {
+              {calendarDays.map((day, index) => {
+                if (day.isPlaceholder) {
+                  return <span className="calendar-day is-placeholder" key={`placeholder-${index}`} aria-hidden="true" />;
+                }
+
                 const dateKey = formatDateKey(day.date);
                 const dayLabel = `${day.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}${day.isAvailable ? ' available' : ' unavailable'}`;
                 const dayClassName = `calendar-day${day.isAvailable ? ' is-available' : ''}${day.isSelected ? ' is-selected' : ''}${day.isCurrentMonth ? '' : ' is-muted'}`;

@@ -213,14 +213,6 @@ export default function Home() {
         <BookingCalendarClient />
         <footer className="site-footer" data-screen-label="Footer CTA">
           <div className="shell footer-bottom">
-            <nav aria-label="Footer navigation">
-              <a href="/training">Training</a>
-              <a href="/consulting">Consulting</a>
-              <a href="/events">Events</a>
-              <a href="#pricing">Pricing</a>
-              <a href="/about">About</a>
-              <a href="#faqs">FAQs</a>
-            </nav>
             <div className="footer-social" aria-label="Social links">
               <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">X</a>
               <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
