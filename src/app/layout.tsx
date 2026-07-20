@@ -3,21 +3,26 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "OMNI Live Call | COMMUNE Capital",
-  description: "Live Call Registration",
-  metadataBase: new URL("https://invest.communecapital.com"),
-  alternates: { canonical: "/livecall" },
-  openGraph: { title: "Live Call Registration", description: "", url: "https://invest.communecapital.com/livecall", type: "website" },
-  twitter: { card: "summary", title: "Live Call Registration", description: "" },
-  generator: "HubSpot",
+  title: "AgentHappy | AI Training & Implementation",
+  description: "AgentHappy helps leadership and management teams design, deploy, and govern practical AI agent workflows.",
+  openGraph: {
+    title: "AgentHappy | AI Training & Implementation",
+    description: "Practical AI training and implementation for teams building durable, production-ready workflows.",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "AgentHappy | AI Training & Implementation",
+    description: "Practical AI training and implementation for teams building durable, production-ready workflows.",
+  },
 };
 
-export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#EDEEE9", colorScheme: "light" };
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#0A0A0A", colorScheme: "dark" };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body data-state="form" data-screen-label="OMNI Live Call · Form-First">
+      <body data-state="form" data-screen-label="AgentHappy · AI Training & Implementation">
         {children}
         <Script id="commune-interactions" strategy="afterInteractive">{`
           window.addEventListener('message', function (e) {
