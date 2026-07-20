@@ -89,7 +89,7 @@ export default function Home() {
             </div>
             <div className="learn-visual">
               <img
-                src="/images/as-1.png"
+                src="/images/agenthappy-cubes.png"
                 alt="Agentic AI workflow graphic"
                 className="learn-visual-image"
                 loading="lazy"
@@ -101,7 +101,7 @@ export default function Home() {
           <div className="shell consulting-shell">
             <div className="learn-visual consulting-visual">
               <img
-                src="/images/as-1.png"
+                src="/images/agenthappy-circles.png"
                 alt="Applied AI consulting team working through an enterprise deployment plan"
                 className="learn-visual-image"
                 loading="lazy"
