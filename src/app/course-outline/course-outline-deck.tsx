@@ -36,6 +36,7 @@ function WeekSlide({ phase, theme, topics, asyncWork, deliverable }: WeekSlidePr
 export default function CourseOutlineDeck() {
   const scrollerRef = useRef<HTMLDivElement>(null);
   const [currentPage, setCurrentPage] = useState(0);
+  const [isTocOpen, setIsTocOpen] = useState(false);
   const pageCount = pages.length;
 
   const goToPage = useCallback((page: number) => {
@@ -56,12 +57,17 @@ export default function CourseOutlineDeck() {
   return (
     <main className="deck-page" data-screen-label="Agentic AI Leadership Intensive course outline">
       <header className="deck-header">
-        <Link className="deck-wordmark" href="/" aria-label="AgentHappy home">AGENT<span>HAPPY</span></Link>
-        <details className="deck-toc">
-          <summary>Table of contents <span aria-hidden="true">+</span></summary>
-          <ol>{pages.map((page, index) => <li key={page}><button type="button" onClick={() => goToPage(index)} aria-current={currentPage === index ? 'page' : undefined}>{index + 1}. {page}</button></li>)}</ol>
-        </details>
+        <div className="deck-header-left">
+          <button className="deck-menu-button" type="button" onClick={() => setIsTocOpen(true)} aria-label="Open table of contents" aria-expanded={isTocOpen} aria-controls="course-outline-sidebar"><span /><span /><span /></button>
+          <Link className="deck-wordmark" href="/" aria-label="AgentHappy home">AGENT<span>HAPPY</span></Link>
+        </div>
+        <p className="deck-course-title">3-week Agentic AI Workshop</p>
       </header>
+      <div className={`deck-sidebar-backdrop${isTocOpen ? ' is-open' : ''}`} onClick={() => setIsTocOpen(false)} aria-hidden="true" />
+      <aside className={`deck-sidebar${isTocOpen ? ' is-open' : ''}`} id="course-outline-sidebar" aria-label="Table of contents" aria-hidden={!isTocOpen}>
+        <div className="deck-sidebar-heading"><span>Table of contents</span><button type="button" onClick={() => setIsTocOpen(false)} aria-label="Close table of contents">×</button></div>
+        <ol>{pages.map((page, index) => <li key={page}><button type="button" onClick={() => { goToPage(index); setIsTocOpen(false); }} aria-current={currentPage === index ? 'page' : undefined}>{index + 1}. {page}</button></li>)}</ol>
+      </aside>
 
       <div className="deck-scroller" ref={scrollerRef} onScroll={(event) => setCurrentPage(Math.round(event.currentTarget.scrollLeft / event.currentTarget.clientWidth))}>
         <section className="deck-slide" aria-label="Page 1: Program overview"><div className="deck-content deck-hero">
