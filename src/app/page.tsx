@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import ScrollHeaderState from './scroll-header-state';
 import WebinarRegistrationClient, { BookingCalendarClient } from './webinar-registration-client';
+import styles from './page.module.css';
 
 export const dynamic = 'force-dynamic';
 
@@ -14,7 +15,6 @@ export default function Home() {
           <nav className="main-nav" aria-label="Primary navigation">
             <a href="/training">Training</a>
             <a href="/consulting">Consulting</a>
-            <a href="/events">Events</a>
             <a href="#pricing">Pricing</a>
             <a href="/about">About</a>
             <a href="#faqs">FAQs</a>
@@ -203,17 +203,17 @@ export default function Home() {
           <div className="shell">
             <div className="reprompt-inner">
               <div>
-                <h2>Take the next step.</h2>
-                <p>Join us this Wednesday at 5pm PT. Register once and you are on the list — the join link arrives by email before every call.</p>
+                <h2>Ready to map your AI opportunity?</h2>
+                <p>Book a 15-minute discovery call to discuss your goals, identify high-impact AI opportunities, and explore the right next step for your team.</p>
               </div>
-              <a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a>
+              <a className="btn" href="#book-a-call" data-anchor-cta="">Book a 15-minute discovery call</a>
             </div>
           </div>
         </section>
         <BookingCalendarClient />
         <footer className="site-footer" data-screen-label="Footer CTA">
           <div className="shell footer-bottom">
-            <div className="footer-social" aria-label="Social links">
+            <div className={`footer-social ${styles.footerSocialRight}`} aria-label="Social links">
               <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">X</a>
               <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
             </div>

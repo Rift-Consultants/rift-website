@@ -71,7 +71,7 @@ export default function WebinarRegistrationClient() {
         <div className="shell webinar-shell">
           <div className="webinar-copy">
             <span className="eyebrow webinar-eyebrow"><span className="live-dot" aria-hidden="true" />LIVE WEBINAR</span>
-            <h2>IT&rsquo;s Time to Build:<br /><em>Your First IT Agent</em></h2>
+            <h2>IT&rsquo;s Time to Build:<br /><em>Your First AI Agent</em></h2>
             <p className="body">Join AgentHappy for a practical 30-minute session on designing, prompting, and deploying an IT agent that can triage requests, surface context, and help your team move from AI curiosity to useful automation.</p>
             <div className="speaker-row" aria-label="Webinar speakers">
               <div className="speaker-item">
