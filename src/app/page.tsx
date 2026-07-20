@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import ScrollHeaderState from './scroll-header-state';
 import WebinarRegistrationClient, { BookingCalendarClient } from './webinar-registration-client';
+import styles from './page.module.css';
 
 export const dynamic = 'force-dynamic';
 
@@ -14,7 +15,6 @@ export default function Home() {
           <nav className="main-nav" aria-label="Primary navigation">
             <a href="/training">Training</a>
             <a href="/consulting">Consulting</a>
-            <a href="/events">Events</a>
             <a href="#pricing">Pricing</a>
             <a href="/about">About</a>
             <a href="#faqs">FAQs</a>
@@ -213,7 +213,7 @@ export default function Home() {
         <BookingCalendarClient />
         <footer className="site-footer" data-screen-label="Footer CTA">
           <div className="shell footer-bottom">
-            <div className="footer-social" aria-label="Social links">
+            <div className={`footer-social ${styles.footerSocialRight}`} aria-label="Social links">
               <a href="https://x.com" target="_blank" rel="noopener" aria-label="X">X</a>
               <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
             </div>
