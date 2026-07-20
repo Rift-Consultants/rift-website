@@ -203,10 +203,10 @@ export default function Home() {
           <div className="shell">
             <div className="reprompt-inner">
               <div>
-                <h2>Take the next step.</h2>
-                <p>Join us this Wednesday at 5pm PT. Register once and you are on the list — the join link arrives by email before every call.</p>
+                <h2>Ready to map your AI opportunity?</h2>
+                <p>Book a 15-minute discovery call to discuss your goals, identify high-impact AI opportunities, and explore the right next step for your team.</p>
               </div>
-              <a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a>
+              <a className="btn" href="#book-a-call" data-anchor-cta="">Book a 15-minute discovery call</a>
             </div>
           </div>
         </section>
