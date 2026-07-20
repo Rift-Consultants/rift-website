@@ -127,8 +127,8 @@ export default function Home() {
               <input type="radio" id="pricing-monthly" name="pricing-plan" defaultChecked />
               <input type="radio" id="pricing-project" name="pricing-plan" />
               <div className="pricing-toggle" aria-label="Pricing options">
-                <label htmlFor="pricing-monthly">3-week workshop</label>
-                <label htmlFor="pricing-project">development retainer</label>
+                <label htmlFor="pricing-monthly">3-Week Workshop</label>
+                <label htmlFor="pricing-project">Development Retainer</label>
               </div>
               <div className="pricing-panel monthly-panel">
                 <div className="pricing-benefits">
@@ -139,15 +139,15 @@ export default function Home() {
                     <li>Redesign one current high-value workflow as an AI agentic workflow.</li>
                     <li>Leave with (3) deliverables: (1) a use case canvas, (2) a agentic workflow design document, (3) a platform to create future agentic workflows</li>
                   </ul>
-                  <p>We keep it simple and flexible.</p>
+                  <p>For Leadership and Management teams.</p>
                   <span className="pricing-note">Location and time: Texas (CST)</span>
                 </div>
                 <article className="pricing-card">
                   <div className="availability"><span aria-hidden="true" />4 slots available</div>
-                  <h3>3-Week Agentic AI Workshop</h3>
-                  <p>For leadership teams, redesign one high-value workflow into an agentic ai-first workflow for your department and teams.</p>
+                  <h3>Agentic AI Workshop</h3>
+                  <p>3-Week workshop for leadership teams, redesign one high-value workflow into an agentic ai-first workflow for your department and teams.</p>
                   <div className="pricing-rule" />
-                  <div className="price">$2,395 <span>/ month</span></div>
+                  <div className="price">$2,395</div>
                   <a className="btn" href="#reserve" data-anchor-cta="">join the workshop</a>
                 </article>
               </div>
@@ -167,8 +167,8 @@ export default function Home() {
                   <h3>Monthly retainer</h3>
                   <p>A focused engagement to design, build, and hand off a specific AI workflow or agent for your team.</p>
                   <div className="pricing-rule" />
-                  <div className="price">Custom <span>/ project</span></div>
-                  <a className="btn" href="#reserve" data-anchor-cta="">Scope a one-off project</a>
+                  <div className="price">$12,000<span>/month</span></div>
+                  <a className="btn" href="#reserve" data-anchor-cta="">START A PROJECT</a>
                 </article>
               </div>
             </div>
