@@ -34,9 +34,9 @@ export default function Home() {
 
             <div className="hero-inner">
               <div className="hero-copy reveal">
-                <h1>AI training and implementation for corporate leadership <br /> and management teams. Turn single-prompt chats, untracked <br /> token usage, and AI hallucinations into multi-agent production workflows</h1>
+                <h1>AI training workshops and implementation for corporate leadership <br /> and management teams. Turn single-prompt chats, untracked <br /> token usage, and AI hallucinations into multi-agent production workflows</h1>
                 <div className="hero-actions" aria-label="Hero calls to action">
-                  <a className="btn" href="#reserve" data-anchor-cta="">sign up for training</a>
+                  <a className="btn" href="#reserve" data-anchor-cta="">join the workshop</a>
                   <a className="btn btn-secondary" href="#reserve" data-anchor-cta="">start a project</a>
                 </div>
               </div>
@@ -61,8 +61,8 @@ export default function Home() {
         <section className="featured learn-section" data-screen-label="What you'll learn">
           <div className="shell learn-shell">
             <div className="featured-copy learn-copy">
-              <span className="eyebrow">Workshop</span>
-              <h2>What you&rsquo;ll learn</h2>
+              <span className="eyebrow">3-week workshop</span>
+              <h2>What you&rsquo;ll leave with</h2>
               <div className="learn-list">
                 <div className="learn-item">
                   <span className="learn-check" aria-hidden="true">✓</span>
@@ -75,7 +75,7 @@ export default function Home() {
                   <span className="learn-check" aria-hidden="true">✓</span>
                   <div>
                     <h3>Design an agent-first workflow</h3>
-                    <p>Apply the AGENT framework to redesign a workflow for autonomous operation, human-agent collaboration, governance checkpoints, and technical handoff.</p>
+                    <p>Apply the AIM framework to redesign a workflow for autonomous operation, human-agent collaboration, governance checkpoints, and technical handoff.</p>
                   </div>
                 </div>
                 <div className="learn-item">
@@ -127,44 +127,44 @@ export default function Home() {
               <input type="radio" id="pricing-monthly" name="pricing-plan" defaultChecked />
               <input type="radio" id="pricing-project" name="pricing-plan" />
               <div className="pricing-toggle" aria-label="Pricing options">
-                <label htmlFor="pricing-monthly">Monthly Retainer</label>
-                <label htmlFor="pricing-project">One-Off Project</label>
+                <label htmlFor="pricing-monthly">3-week workshop</label>
+                <label htmlFor="pricing-project">development retainer</label>
               </div>
               <div className="pricing-panel monthly-panel">
                 <div className="pricing-benefits">
                   <ul>
-                    <li>Continuous AI workflow discovery, design, and implementation support.</li>
-                    <li>Priority access to a dedicated AI workflow team each month.</li>
+                    <li>Live online sessions each Tuesday, Wednesday, and Thursday.</li>
+                    <li>Guided learnings to work at your own pace.</li>
                     <li>Weekly strategy and delivery check-ins to keep momentum high.</li>
-                    <li>Roadmap management across agents, automations, tools, and data connections.</li>
-                    <li>Specialized expertise in AI agents, automations, and operational systems.</li>
+                    <li>Redesign one current high-value workflow as an AI agentic workflow.</li>
+                    <li>Leave with (3) deliverables: (1) a use case canvas, (2) a agentic workflow design document, (3) a platform to create future agentic workflows</li>
                   </ul>
                   <p>We keep it simple and flexible.</p>
-                  <span className="pricing-note">Location and time: Los Angeles (PST)</span>
+                  <span className="pricing-note">Location and time: Texas (CST)</span>
                 </div>
                 <article className="pricing-card">
                   <div className="availability"><span aria-hidden="true" />4 slots available</div>
-                  <h3>Monthly AI Retainer</h3>
-                  <p>Ongoing strategy, implementation, and optimization support for teams building AI into daily operations.</p>
+                  <h3>3-Week Agentic AI Workshop</h3>
+                  <p>For leadership teams, redesign one high-value workflow into an agentic ai-first workflow for your department and teams.</p>
                   <div className="pricing-rule" />
-                  <div className="price">$8,000 <span>/ month</span></div>
-                  <a className="btn" href="#reserve" data-anchor-cta="">Start your monthly retainer</a>
+                  <div className="price">$2,395 <span>/ month</span></div>
+                  <a className="btn" href="#reserve" data-anchor-cta="">join the workshop</a>
                 </article>
               </div>
               <div className="pricing-panel project-panel">
                 <div className="pricing-benefits">
                   <ul>
-                    <li>Fixed-scope AI agent or automation build with a clearly defined outcome.</li>
-                    <li>Discovery, workflow mapping, implementation plan, and delivery milestones.</li>
-                    <li>Hands-on setup across your approved tools, prompts, data, and operating process.</li>
-                    <li>Team walkthrough, documentation, and practical launch recommendations.</li>
+                    <li>Full-time development support with a dedicated team.</li>
+                    <li>Transparent, predictable pricing.</li>
+                    <li>Easy collaboration with your existing departments and teams.</li>
+                    <li>Team training, documentation, and launch support.</li>
                   </ul>
-                  <p>Ideal when you have one priority workflow to ship.</p>
-                  <span className="pricing-note">Typical timeline: 2–6 weeks after kickoff</span>
+                  <p>Ideal when you need flexible development support.</p>
+                  <span className="pricing-note">Typical timeline: 4–8 weeks per workflow</span>
                 </div>
                 <article className="pricing-card">
                   <div className="availability"><span aria-hidden="true" />Fixed scope</div>
-                  <h3>One-Off AI Project</h3>
+                  <h3>Monthly retainer</h3>
                   <p>A focused engagement to design, build, and hand off a specific AI workflow or agent for your team.</p>
                   <div className="pricing-rule" />
                   <div className="price">Custom <span>/ project</span></div>
