@@ -12,6 +12,7 @@ export async function registerForWebinar(formData: FormData) {
   const firstName = normalizeOptionalText(formData.get('firstName'));
   const lastName = normalizeOptionalText(formData.get('lastName'));
   const email = String(formData.get('email') ?? '').trim().toLowerCase();
+  const phone = normalizeOptionalText(formData.get('phone'));
   const marketingConsent = formData.get('marketingConsent') === 'on';
   const requestedDate = normalizeOptionalText(formData.get('requestedDate'));
   const requestedTime = normalizeOptionalText(formData.get('requestedTime'));
@@ -19,6 +20,10 @@ export async function registerForWebinar(formData: FormData) {
 
   if (!email) {
     throw new Error('Email is required.');
+  }
+
+  if (!requestedDate && (!firstName || !lastName || !phone)) {
+    throw new Error('First name, last name, and phone number are required to download the course outline.');
   }
 
   const signupId = crypto.randomUUID();
@@ -31,6 +36,7 @@ export async function registerForWebinar(formData: FormData) {
       first_name: firstName,
       last_name: lastName,
       email,
+      phone,
       marketing_consent: marketingConsent,
       source,
     },

@@ -19,7 +19,7 @@ export default function Home() {
             <a href="/about">About</a>
             <a href="#faqs">FAQs</a>
           </nav>
-          <a className="nav-cta" href="#reserve">Talk to us</a>
+          <a className="nav-cta" href="#book-a-call">Talk to us</a>
           <label className="menu-button" htmlFor="mobile-menu-toggle" aria-label="Toggle navigation menu">
             <span aria-hidden="true" />
             <span aria-hidden="true" />
@@ -36,8 +36,8 @@ export default function Home() {
               <div className="hero-copy reveal">
                 <h1>AI training and implementation for corporate leadership <br /> and management teams. Turn single-prompt chats, untracked <br /> token usage, and AI hallucinations into multi-agent production workflows</h1>
                 <div className="hero-actions" aria-label="Hero calls to action">
-                  <a className="btn" href="#reserve" data-anchor-cta="">join the workshop</a>
-                  <a className="btn btn-secondary" href="#reserve" data-anchor-cta="">start a project</a>
+                  <a className="btn" href="#webinar-registration-form" data-anchor-cta="">JOIN THE WORKSHOP</a>
+                  <a className="btn btn-secondary" href="#book-a-call" data-anchor-cta="">START A PROJECT</a>
                 </div>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function Home() {
               <h2>AI workflows beyond a single chat prompt.</h2>
               <div className="prop-tag">AI agent strategy · deployment consulting</div>
               <p className="body">We work with leaders, operators, and frontline teams to identify where agents can make the biggest impact, redesign critical workflows around intelligence, and deploy durable systems connected to your data, tools, controls, and business processes.</p>
-              <div className="sec-cta"><a className="btn" href="#reserve" data-anchor-cta="">Book a call <span className="arr">→</span></a></div>
+              <div className="sec-cta"><a className="btn" href="#book-a-call" data-anchor-cta="">Book a call <span className="arr">→</span></a></div>
             </div>
           </div>
         </section>
@@ -148,7 +148,7 @@ export default function Home() {
                   <p>3-Week workshop for leadership teams, redesign one high-value workflow into an agentic ai-first workflow for your department and teams.</p>
                   <div className="pricing-rule" />
                   <div className="price">$2,395</div>
-                  <a className="btn" href="#reserve" data-anchor-cta="">join the workshop</a>
+                  <a className="btn" href="#webinar-registration-form" data-anchor-cta="">JOIN THE WORKSHOP</a>
                 </article>
               </div>
               <div className="pricing-panel project-panel">
@@ -160,7 +160,7 @@ export default function Home() {
                     <li>Team training, documentation, and launch support.</li>
                   </ul>
                   <p>Ideal when you need flexible development support.</p>
-                  <span className="pricing-note">Typical timeline: 4–8 weeks per workflow</span>
+                  <span className="pricing-note">Location and time: Texas (CST)</span>
                 </div>
                 <article className="pricing-card">
                   <div className="availability"><span aria-hidden="true" />Fixed scope</div>
@@ -168,7 +168,7 @@ export default function Home() {
                   <p>A focused engagement to design, build, and hand off a specific AI workflow or agent for your team.</p>
                   <div className="pricing-rule" />
                   <div className="price">$12,000<span>/month</span></div>
-                  <a className="btn" href="#reserve" data-anchor-cta="">START A PROJECT</a>
+                  <a className="btn" href="#book-a-call" data-anchor-cta="">START A PROJECT</a>
                 </article>
               </div>
             </div>
@@ -221,7 +221,7 @@ export default function Home() {
           <div className="shell footer-credit">© AgentHappy 2026</div>
         </footer>
       </main>
-      <div className="stickybar" aria-hidden="true"><a className="btn" href="#reserve" data-anchor-cta="">Reserve my seat</a></div>
+      <div className="stickybar" aria-hidden="true"><a className="btn" href="#webinar-registration-form" data-anchor-cta="">Reserve my seat</a></div>
     </>
   );
 }
