@@ -34,7 +34,7 @@ export default function Home() {
 
             <div className="hero-inner">
               <div className="hero-copy reveal">
-                <h1>AI training workshops and implementation for corporate leadership <br /> and management teams. Turn single-prompt chats, untracked <br /> token usage, and AI hallucinations into multi-agent production workflows</h1>
+                <h1>AI training and implementation for corporate leadership <br /> and management teams. Turn single-prompt chats, untracked <br /> token usage, and AI hallucinations into multi-agent production workflows</h1>
                 <div className="hero-actions" aria-label="Hero calls to action">
                   <a className="btn" href="#reserve" data-anchor-cta="">join the workshop</a>
                   <a className="btn btn-secondary" href="#reserve" data-anchor-cta="">start a project</a>
@@ -206,7 +206,7 @@ export default function Home() {
                 <h2>Ready to map your AI opportunity?</h2>
                 <p>Book a 15-minute discovery call to discuss your goals, identify high-impact AI opportunities, and explore the right next step for your team.</p>
               </div>
-              <a className="btn" href="#book-a-call" data-anchor-cta="">Book a 15-minute discovery call</a>
+              <a className="btn" href="#book-a-call" data-anchor-cta="">TALK TO US</a>
             </div>
           </div>
         </section>
