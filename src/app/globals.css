@@ -114,3 +114,8 @@ body:before,.noise:before{background-size:160px 160px}body:before{opacity:.18}
 /* Keep the change-time control anchored to the summary panel's lower-left corner. */
 .booking-details-summary .change-time-button{align-self:flex-start}
 .webinar-card input[type=tel]{width:100%;height:48px;border:1px solid var(--border-soft);border-radius:12px;background:rgba(255,255,255,.04);padding:0 14px;font:inherit;color:var(--fg-1);outline:none;transition:border-color 160ms ease,box-shadow 160ms ease,background-color 160ms ease}.webinar-card input[type=tel]:focus{border-color:var(--accent);background:rgba(255,255,255,.07);box-shadow:0 0 0 3px rgba(217,168,108,.16)}
+
+/* Use the hero CTA treatment for every primary action in page sections. */
+main .btn,.webinar-card .btn,.pricing-card .btn,.reprompt-inner .btn,.booking-details-fields .btn{border-radius:0;font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:0;text-transform:uppercase;padding:13px 18px}
+.webinar-card .btn,.pricing-card .btn,.booking-details-fields .btn{width:auto;justify-self:start}
+@media (max-width:860px){.featured .sec-cta .btn,.reprompt-inner .btn{width:auto}}
