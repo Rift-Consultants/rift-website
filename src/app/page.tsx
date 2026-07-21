@@ -19,7 +19,7 @@ export default function Home() {
             <a href="/about">About</a>
             <a href="#faqs">FAQs</a>
           </nav>
-          <a className="nav-cta" href="#book-a-call">Talk to us</a>
+          <a className="nav-cta" href="#book-a-call">Book a call</a>
           <label className="menu-button" htmlFor="mobile-menu-toggle" aria-label="Toggle navigation menu">
             <span aria-hidden="true" />
             <span aria-hidden="true" />
@@ -62,7 +62,7 @@ export default function Home() {
           <div className="shell learn-shell">
             <div className="featured-copy learn-copy">
               <span className="eyebrow">3-week workshop</span>
-              <h2>What you&rsquo;ll leave with</h2>
+              <h2>what you&apos;ll learn</h2>
               <div className="learn-list">
                 <div className="learn-item">
                   <span className="learn-check" aria-hidden="true">✓</span>
@@ -147,7 +147,7 @@ export default function Home() {
                   <h3>Agentic AI Workshop</h3>
                   <p>3-Week workshop for leadership teams, redesign one high-value workflow into an agentic ai-first workflow for your department and teams.</p>
                   <div className="pricing-rule" />
-                  <div className="price">$2,395</div>
+                  <div className="price">$2,395 USD</div>
                   <a className="btn" href="#webinar-registration-form" data-anchor-cta="">JOIN THE WORKSHOP</a>
                 </article>
               </div>
@@ -184,16 +184,27 @@ export default function Home() {
                 <p>Strategy, workflow design, implementation support, weekly check-ins, and roadmap management across AI tools, automations, agents, and data connections.</p>
               </details>
               <details>
-                <summary>How is a one-off project scoped?</summary>
-                <p>We define a fixed outcome, timeline, and deliverables before work begins so your team knows exactly what will be built and implemented.</p>
+                <summary>Can I do this if I&apos;m non technical?</summary>
+                <p>Yes. This course is for non-technical professionals looking to understand Agentic AI and get ahead by identifying and designing high-value Agentic AI workflows in their business.</p>
               </details>
               <details>
                 <summary>Can you work with our existing tools and data?</summary>
                 <p>Yes. We design around your current systems and identify practical integrations that improve daily operations without unnecessary tool sprawl.</p>
               </details>
               <details>
-                <summary>How soon can we start?</summary>
-                <p>Most engagements begin with a discovery call, followed by a short implementation plan and kickoff once scope and availability are confirmed.</p>
+                <summary>What time are the live classes?</summary>
+                <p>Live classes are each Tuesday, from 12:00 - 13:15 CST. Recordings are available within 2 hours of the class ending. There are also optional Live Labs on Wednesdays and Thursdays from 12:00 - 13:15 CST.</p>
+              </details>
+              <details>
+                <summary>Will I learn to build agents myself?</summary>
+                <p>No. This intensive teaches you to design agent-first workflows and create implementation briefs - not to code or build agents technically. You&apos;ll learn strategic frameworks (AGENT, Agent OS) to:</p>
+                <ul>
+                  <li>Redesign workflows for agent-first operation</li>
+                  <li>Create technical briefs for your engineering teams</li>
+                  <li>Evaluate vendor solutions with clear criteria</li>
+                  <li>Lead transformation confidently</li>
+                </ul>
+                <p>Perfect for leaders who need to plan and brief, not engineers who need to build and deploy. If you&apos;re looking for hands-on coding or technical agent building, this course is not for you.</p>
               </details>
             </div>
           </div>
@@ -204,9 +215,9 @@ export default function Home() {
             <div className="reprompt-inner">
               <div>
                 <h2>Ready to map your AI opportunity?</h2>
-                <p>Book a 15-minute discovery call to discuss your goals, identify high-impact AI opportunities, and explore the right next step for your team.</p>
+                <p>Book a 30-minute discovery call to discuss your goals, identify high-impact AI opportunities, and explore the right next step for your team.</p>
               </div>
-              <a className="btn" href="#book-a-call" data-anchor-cta="">TALK TO US</a>
+              <a className="btn" href="#book-a-call" data-anchor-cta="">BOOK A CALL</a>
             </div>
           </div>
         </section>

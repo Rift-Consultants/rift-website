@@ -119,3 +119,6 @@ body:before,.noise:before{background-size:160px 160px}body:before{opacity:.18}
 main .btn,.webinar-card .btn,.pricing-card .btn,.reprompt-inner .btn,.booking-details-fields .btn{border-radius:0;font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:0;text-transform:uppercase;padding:13px 18px}
 .webinar-card .btn,.pricing-card .btn,.booking-details-fields .btn{width:auto;justify-self:start}
 @media (max-width:860px){.featured .sec-cta .btn,.reprompt-inner .btn{width:auto}}
+
+/* Center the webinar action without changing its shared hero CTA dimensions. */
+.webinar-card .btn{justify-self:center}

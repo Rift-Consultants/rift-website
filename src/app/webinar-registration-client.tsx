@@ -183,7 +183,7 @@ function BookingDetailsForm({ selectedDay, selectedDateKey, selectedTime, onChan
               <span aria-hidden="true">◷</span>
               <strong>{formatSelectedSlot(selectedDay, selectedTime)}</strong>
             </div>
-            <p className="calendar-intro">15 minute Google Meet discovery call.</p>
+            <p className="calendar-intro">30 minute Google Meet discovery call.</p>
             <button className="change-time-button" type="button" onClick={onChangeTime}>Change time</button>
           </aside>
           <div className="booking-details-fields">
@@ -234,7 +234,7 @@ function BookingCalendar({ calendarDays, selectedDay, selectedTime, onSelectDate
             <p className="calendar-intro">In this call, we&apos;ll dive into:</p>
             <ul><li>Your business and goals</li><li>Challenges to solve</li><li>Your current AI workflows</li><li>How we can help you</li></ul>
             <div className="calendar-meta-list">
-              <div className="calendar-meta"><span aria-hidden="true">◷</span><strong>15m</strong></div>
+              <div className="calendar-meta"><span aria-hidden="true">◷</span><strong>30m</strong></div>
               <div className="calendar-meta"><span aria-hidden="true">▣</span>Google Meet</div>
               <div className="calendar-meta"><span aria-hidden="true">◎</span>America/Los Angeles</div>
             </div>
@@ -250,7 +250,7 @@ function BookingCalendar({ calendarDays, selectedDay, selectedTime, onSelectDate
 
                 const dateKey = formatDateKey(day.date);
                 const dayLabel = `${day.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}${day.isAvailable ? ' available' : ' unavailable'}`;
-                const dayClassName = `calendar-day${day.isAvailable ? ' is-available' : ''}${day.isSelected ? ' is-selected' : ''}${day.isCurrentMonth ? '' : ' is-muted'}`;
+                const dayClassName = `calendar-day${day.isAvailable ? ' is-available' : ''}${day.isSelected ? ' is-selected' : ''}`;
 
                 if (!day.isAvailable) {
                   return <span className={dayClassName} key={day.date.toISOString()} aria-label={dayLabel}><span>{day.date.getDate()}</span>{day.monthLabel ? <em>{day.monthLabel}</em> : null}</span>;
