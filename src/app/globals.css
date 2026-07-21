@@ -110,3 +110,15 @@ body:before,.noise:before{background-size:160px 160px}body:before{opacity:.18}
 
 /* Course outline table of contents sidebar */
 .deck-header-left{display:flex;align-items:center;gap:14px}.deck-menu-button{display:grid;gap:4px;width:30px;padding:7px 4px;border:0;background:transparent;color:var(--accent-ink);cursor:pointer}.deck-menu-button span{display:block;width:22px;height:2px;background:currentColor}.deck-course-title{margin:0;font-size:12px;font-weight:800;letter-spacing:.04em}.deck-sidebar-backdrop{position:fixed;inset:0;z-index:20;background:rgba(0,0,0,.34);opacity:0;pointer-events:none;transition:opacity 180ms ease}.deck-sidebar-backdrop.is-open{opacity:1;pointer-events:auto}.deck-sidebar{position:fixed;z-index:21;top:0;bottom:0;left:0;width:min(340px,86vw);padding:22px 18px;background:#fff;color:var(--deck-ink);box-shadow:14px 0 36px rgba(0,0,0,.2);transform:translateX(-105%);transition:transform 220ms ease}.deck-sidebar.is-open{transform:translateX(0)}.deck-sidebar-heading{display:flex;align-items:center;justify-content:space-between;padding:0 4px 18px;border-bottom:1px solid var(--deck-rule);color:#96652b;font-size:12px;font-weight:800;letter-spacing:.13em;text-transform:uppercase}.deck-sidebar-heading button{width:30px;height:30px;border:0;background:transparent;color:var(--deck-ink);font-size:28px;line-height:1;cursor:pointer}.deck-sidebar ol{display:grid;gap:5px;margin:18px 0 0;padding:0;list-style:none}.deck-sidebar button:not(.deck-sidebar-heading button){width:100%;padding:13px 12px;border:0;background:transparent;color:var(--deck-copy);text-align:left;font:inherit;font-size:14px;cursor:pointer}.deck-sidebar ol button:hover,.deck-sidebar ol button[aria-current=page]{background:#f5eadc;color:var(--deck-ink)}@media (max-width:720px){.deck-course-title{font-size:10px}.deck-header-left{gap:9px}.deck-menu-button{width:26px}.deck-menu-button span{width:19px}}
+
+/* Keep the change-time control anchored to the summary panel's lower-left corner. */
+.booking-details-summary .change-time-button{align-self:flex-start}
+.webinar-card input[type=tel]{width:100%;height:48px;border:1px solid var(--border-soft);border-radius:12px;background:rgba(255,255,255,.04);padding:0 14px;font:inherit;color:var(--fg-1);outline:none;transition:border-color 160ms ease,box-shadow 160ms ease,background-color 160ms ease}.webinar-card input[type=tel]:focus{border-color:var(--accent);background:rgba(255,255,255,.07);box-shadow:0 0 0 3px rgba(217,168,108,.16)}
+
+/* Use the hero CTA treatment for every primary action in page sections. */
+main .btn,.webinar-card .btn,.pricing-card .btn,.reprompt-inner .btn,.booking-details-fields .btn{border-radius:0;font-family:var(--font-sans);font-size:12px;font-weight:600;letter-spacing:0;text-transform:uppercase;padding:13px 18px}
+.webinar-card .btn,.pricing-card .btn,.booking-details-fields .btn{width:auto;justify-self:start}
+@media (max-width:860px){.featured .sec-cta .btn,.reprompt-inner .btn{width:auto}}
+
+/* Center the webinar action without changing its shared hero CTA dimensions. */
+.webinar-card .btn{justify-self:center}

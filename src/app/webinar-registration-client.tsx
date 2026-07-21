@@ -9,6 +9,7 @@ const weekdayLabels = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 const calendarWindowDays = 30;
 const monthFormatter = new Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' });
 const dayHeaderFormatter = new Intl.DateTimeFormat('en-US', { weekday: 'short', day: 'numeric' });
+const selectedSlotDateFormatter = new Intl.DateTimeFormat('en-US', { weekday: 'short', month: 'long', day: 'numeric' });
 
 function getBusinessDays(startDate: Date, count: number) {
   const days: Date[] = [];
@@ -27,6 +28,22 @@ function getBusinessDays(startDate: Date, count: number) {
 
 function formatDateKey(date: Date) {
   return date.toISOString().slice(0, 10);
+}
+
+function ordinalSuffix(day: number) {
+  const lastTwoDigits = day % 100;
+  if (lastTwoDigits >= 11 && lastTwoDigits <= 13) return 'th';
+
+  switch (day % 10) {
+    case 1: return 'st';
+    case 2: return 'nd';
+    case 3: return 'rd';
+    default: return 'th';
+  }
+}
+
+function formatSelectedSlot(date: Date, time: string) {
+  return `${selectedSlotDateFormatter.format(date)}${ordinalSuffix(date.getDate())} at ${time.toUpperCase()} PT`;
 }
 
 type CalendarDate = {
@@ -78,7 +95,7 @@ export default function WebinarRegistrationClient() {
                 <Image className="speaker-avatar" src="/images/ava1.jpg" alt="Kenny Mack speaker avatar" width={44} height={44} style={{ objectFit: 'cover' }} />
                 <div>
                   <strong>Kenny Mack</strong>
-                  <span>Applied AI Strategy Team</span>
+                  <span>Applied AI Engineer</span>
                 </div>
               </div>
             </div>
@@ -91,10 +108,11 @@ export default function WebinarRegistrationClient() {
           </div>
           <form className="webinar-card" id="webinar-registration-form" action={registerForWebinar}>
             <div className="field-grid">
-              <label><span>First name</span><input type="text" name="firstName" autoComplete="given-name" /></label>
-              <label><span>Last name</span><input type="text" name="lastName" autoComplete="family-name" /></label>
+              <label><span>First name</span><input type="text" name="firstName" autoComplete="given-name" required /></label>
+              <label><span>Last name</span><input type="text" name="lastName" autoComplete="family-name" required /></label>
             </div>
             <label><span>Work email</span><input type="email" name="email" autoComplete="email" required /></label>
+            <label><span>Phone number</span><input type="tel" name="phone" autoComplete="tel" required /></label>
             <label className="consent-row">
               <input type="checkbox" name="marketingConsent" defaultChecked />
               <span>I agree to receive webinar reminders and related resources from AgentHappy.</span>
@@ -163,9 +181,9 @@ function BookingDetailsForm({ selectedDay, selectedDateKey, selectedTime, onChan
             <h3>Meeting with AgentHappy</h3>
             <div className="selected-slot" aria-label="Selected meeting time">
               <span aria-hidden="true">◷</span>
-              <strong>{dayHeaderFormatter.format(selectedDay)} at {selectedTime} PT</strong>
+              <strong>{formatSelectedSlot(selectedDay, selectedTime)}</strong>
             </div>
-            <p className="calendar-intro">15 minute Google Meet discovery call.</p>
+            <p className="calendar-intro">30 minute Google Meet discovery call.</p>
             <button className="change-time-button" type="button" onClick={onChangeTime}>Change time</button>
           </aside>
           <div className="booking-details-fields">
@@ -216,7 +234,7 @@ function BookingCalendar({ calendarDays, selectedDay, selectedTime, onSelectDate
             <p className="calendar-intro">In this call, we&apos;ll dive into:</p>
             <ul><li>Your business and goals</li><li>Challenges to solve</li><li>Your current AI workflows</li><li>How we can help you</li></ul>
             <div className="calendar-meta-list">
-              <div className="calendar-meta"><span aria-hidden="true">◷</span><strong>15m</strong></div>
+              <div className="calendar-meta"><span aria-hidden="true">◷</span><strong>30m</strong></div>
               <div className="calendar-meta"><span aria-hidden="true">▣</span>Google Meet</div>
               <div className="calendar-meta"><span aria-hidden="true">◎</span>America/Los Angeles</div>
             </div>
@@ -232,7 +250,7 @@ function BookingCalendar({ calendarDays, selectedDay, selectedTime, onSelectDate
 
                 const dateKey = formatDateKey(day.date);
                 const dayLabel = `${day.date.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })}${day.isAvailable ? ' available' : ' unavailable'}`;
-                const dayClassName = `calendar-day${day.isAvailable ? ' is-available' : ''}${day.isSelected ? ' is-selected' : ''}${day.isCurrentMonth ? '' : ' is-muted'}`;
+                const dayClassName = `calendar-day${day.isAvailable ? ' is-available' : ''}${day.isSelected ? ' is-selected' : ''}`;
 
                 if (!day.isAvailable) {
                   return <span className={dayClassName} key={day.date.toISOString()} aria-label={dayLabel}><span>{day.date.getDate()}</span>{day.monthLabel ? <em>{day.monthLabel}</em> : null}</span>;
