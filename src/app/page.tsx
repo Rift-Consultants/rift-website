@@ -163,7 +163,7 @@ export default function Home() {
                   <span className="pricing-note">Location and time: Texas (CST)</span>
                 </div>
                 <article className="pricing-card">
-                  <div className="availability"><span aria-hidden="true" />Fixed scope</div>
+                  <div className="availability"><span aria-hidden="true" />9 slots remaining</div>
                   <h3>Monthly retainer</h3>
                   <p>A focused engagement to design, build, and hand off a specific AI workflow or agent for your team.</p>
                   <div className="pricing-rule" />
