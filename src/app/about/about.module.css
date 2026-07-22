@@ -1,54 +1,106 @@
 .page {
-  position: relative;
-  isolation: isolate;
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto minmax(0, 1fr) auto;
   width: 100%;
   height: 100svh;
   overflow: hidden;
-  padding: clamp(22px, 2.1vw, 40px) clamp(22px, 2.4vw, 48px) clamp(22px, 2vw, 38px);
-  background: #0b0b0b;
-  color: #f7f6f1;
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--bg-page);
+  color: var(--fg-1);
 }
 
-.page::before {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  content: "";
-  background: radial-gradient(ellipse 42% 52% at 50% 60%, #3a3a3a 0%, #202020 36%, #0b0b0b 76%);
+.page :global(.topbar) { border-bottom: 1px solid var(--border-subtle); }
+.page :global(.main-nav a[aria-current="page"]) { color: var(--fg-1); }
+
+.introduction {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 24px;
+  text-align: center;
 }
 
-.header { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-.wordmark { color: #c33932; font-size: clamp(13px, 1.1vw, 19px); font-weight: 900; letter-spacing: -.09em; text-decoration: none; transform: scaleX(1.2); transform-origin: left center; }
-.wordmark span { display: inline-block; margin-left: .1em; }
-.navigation { display: flex; gap: clamp(18px, 2.2vw, 42px); }
-.navigation a { color: rgba(247, 246, 241, .66); font-size: clamp(11px, 1vw, 16px); font-weight: 900; letter-spacing: .04em; text-decoration: none; text-transform: uppercase; }
-.navigation a[aria-current="page"], .navigation a:hover, .navigation a:focus-visible { color: #fff; }
+.introductionInner { max-width: 760px; }
+.introduction h1 {
+  margin: 0;
+  color: var(--fg-1);
+  font-family: var(--font-sans);
+  font-size: clamp(28px, 3.4vw, 52px);
+  font-weight: var(--fw-regular);
+  letter-spacing: -.035em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+.introduction :global(.btn) { margin-top: 28px; }
+.introduction p {
+  margin: 20px 0 0;
+  color: var(--fg-2);
+  font-size: 16px;
+  line-height: var(--lh-body);
+}
 
-.introduction { align-self: center; justify-self: center; max-width: min(1320px, 86vw); margin-top: clamp(18px, 4vh, 60px); text-align: center; }
-.introduction h1 { margin: 0; font-size: clamp(35px, 4vw, 72px); font-weight: 900; letter-spacing: -.035em; line-height: .95; text-transform: uppercase; }
-.contactButton { display: inline-flex; align-items: center; gap: .5em; margin-top: clamp(25px, 3.8vh, 54px); padding: .74em 1em; border-radius: 14px; background: #fff; color: #171717; font-size: clamp(13px, 1.15vw, 19px); font-weight: 900; letter-spacing: -.03em; text-decoration: none; text-transform: uppercase; transition: transform 150ms ease, background-color 150ms ease; }
-.contactButton:hover, .contactButton:focus-visible { background: #e9e9e9; transform: translateY(-2px); }
-.contactButton span { font-size: 1.2em; line-height: .7; }
-.introduction p { margin: clamp(26px, 4vh, 56px) 0 0; color: rgba(247, 246, 241, .63); font-size: clamp(13px, 1.16vw, 20px); font-weight: 800; letter-spacing: -.03em; text-transform: uppercase; }
+.team {
+  display: flex;
+  justify-content: center;
+  padding: 0 24px clamp(24px, 3vw, 44px);
+}
 
-.team { width: 100%; }
-.member { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: clamp(190px, 25vh, 290px); padding: 24px; border-radius: 16px; background: rgba(53, 53, 53, .56); box-shadow: inset 0 1px rgba(255, 255, 255, .025); text-align: center; }
-.role { margin: 0; padding: .45em .7em; border-radius: 7px; background: rgba(101, 101, 101, .62); color: #fff; font-size: clamp(11px, .95vw, 16px); font-weight: 900; letter-spacing: -.025em; text-transform: uppercase; }
-.member h3 { margin: clamp(25px, 4vh, 58px) 0; font-size: clamp(28px, 3vw, 53px); font-weight: 900; letter-spacing: .01em; line-height: 1; text-transform: uppercase; }
-.linkedIn { padding: .7em .9em; border: 1px solid rgba(255,255,255,.86); border-radius: 14px; color: #fff; font-size: clamp(12px, 1vw, 17px); font-weight: 900; letter-spacing: -.02em; text-decoration: none; text-transform: uppercase; transition: background-color 150ms ease, color 150ms ease; }
-.linkedIn:hover, .linkedIn:focus-visible { background: #fff; color: #191919; }
-.linkedIn span { margin-left: .2em; font-size: 1.15em; }
+.member {
+  display: flex;
+  align-items: center;
+  width: min(100%, 360px);
+  padding: 14px;
+  border: 1px solid var(--border-soft);
+  background: rgba(255, 255, 255, .04);
+  box-shadow: var(--shadow-sm);
+}
+
+.avatar {
+  flex: 0 0 76px;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.memberDetails { min-width: 0; margin-left: 14px; }
+.role {
+  margin: 0;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: uppercase;
+}
+.member h3 {
+  margin: 4px 0 7px;
+  color: var(--fg-1);
+  font-size: 18px;
+  font-weight: var(--fw-semibold);
+  letter-spacing: -.01em;
+  line-height: 1.2;
+}
+.linkedIn {
+  color: var(--fg-2);
+  font-size: 13px;
+  font-weight: var(--fw-medium);
+  text-decoration: none;
+}
+.linkedIn:hover, .linkedIn:focus-visible { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+.linkedIn span { margin-left: 2px; }
 .visuallyHidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 
-@media (max-width: 620px) {
-  .page { padding: 20px 18px 18px; }
-  .wordmark { letter-spacing: -.12em; }
-  .introduction { max-width: 100%; margin-top: 10px; }
-  .introduction h1 { font-size: clamp(31px, 10.5vw, 48px); }
-  .introduction p { margin-top: 26px; font-size: 13px; line-height: 1.25; }
-  .member { min-height: 185px; }
-  .member h3 { margin: 28px 0; }
+@media (max-width: 860px) {
+  .page :global(.topbar-inner) { flex-wrap: nowrap; }
+  .page :global(.main-nav) { order: initial; width: auto; padding: 0; overflow: visible; }
+  .introduction { padding: 24px 18px; }
+  .team { padding: 0 18px 24px; }
+}
+
+@media (max-height: 650px) {
+  .introduction :global(.btn) { margin-top: 18px; }
+  .introduction p { margin-top: 13px; }
+  .team { padding-bottom: 16px; }
+  .member { padding: 10px; }
+  .avatar { flex-basis: 60px; width: 60px; height: 60px; }
 }
