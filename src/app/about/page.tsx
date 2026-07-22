@@ -28,7 +28,7 @@ export default function AboutPage() {
       <section className={styles.team} aria-labelledby="team-title">
         <h2 id="team-title" className={styles.visuallyHidden}>Team</h2>
         <article className={styles.member}>
-          <Image className={styles.avatar} src="/images/ava2.png" alt="Kenny Mack" width={76} height={76} priority />
+          <Image className={styles.avatar} src="/images/ava1.jpg" alt="Kenny Mack" width={76} height={76} priority />
           <div className={styles.memberDetails}>
             <p className={styles.role}>Founder</p>
             <h3>Kenny Mack</h3>
