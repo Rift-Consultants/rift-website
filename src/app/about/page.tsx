@@ -32,6 +32,7 @@ export default function AboutPage() {
           <div className={styles.memberDetails}>
             <p className={styles.role}>Founder</p>
             <h3>Kenny Mack</h3>
+            <p className={styles.jobTitle}>Applied AI Engineer</p>
             <a className={styles.linkedIn} href="https://linkedin.com/knnymck" target="_blank" rel="noreferrer">
               LinkedIn <span aria-hidden="true">↗</span>
             </a>
