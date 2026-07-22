@@ -1,1 +1,39 @@
-.footerSocialRight{margin-left:auto}
+.page {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  width: 100%;
+  height: 100svh;
+  overflow: hidden;
+  background: var(--bg-page);
+}
+
+.main {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.page :global(.fold) {
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.page :global(.hero) {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+}
+
+.page :global(.hero-inner) {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 860px) {
+  .page :global(.topbar-inner) { flex-wrap: nowrap; }
+  .page :global(.main-nav) { order: initial; width: auto; padding: 0; overflow: visible; }
+  .page :global(.hero-inner) { padding-top: 28px; padding-bottom: 28px; }
+  .page :global(.hero-copy h1 br) { display: none; }
+}
