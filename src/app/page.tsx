@@ -1,59 +1,55 @@
 import Image from "next/image";
-import Link from "next/link";
 import styles from "./page.module.css";
-
-const technologies = [
-  ["/images/logos/chatgpt-text.png", "OpenAI", 150],
-  ["/images/logos/claude-text.png", "Claude", 150],
-  ["/images/logos/gemini-text.png", "Gemini", 150],
-  ["/images/logos/wispr-text.png", "Wispr Flow", 190],
-  ["/images/logos/microsoft-text.png", "Microsoft", 170],
-  ["/images/logos/glean-logo.png", "Glean", 150],
-  ["/images/logos/langchain-logo.png", "LangChain", 170],
-] as const;
 
 export default function Home() {
   return (
-    <main className={styles.page}>
-      <Image
-        className={styles.backgroundImage}
-        src="/images/rift-hero-banner-1.png"
-        alt="Leaders discussing AI workflows at a conference table"
-        fill
-        priority
-        sizes="100vw"
-      />
-      <div className={styles.overlay} />
-
-      <header className={styles.header}>
-        <Link className={styles.wordmark} href="/" aria-label="AgentHappy home">
-          AGENT<span>HAPPY</span>
-        </Link>
-        <nav className={styles.navigation} aria-label="Primary navigation">
-          <Link href="/about">About</Link>
-          <a href="mailto:kenny@agenthappy.dev">Contact</a>
-        </nav>
+    <div className={styles.page}>
+      <header className="topbar">
+        <div className="topbar-inner">
+          <a className="wordmark" href="#top" aria-label="AgentHappy home">
+            AGENT<span>HAPPY</span>
+          </a>
+          <nav className="main-nav" aria-label="Primary navigation">
+            <a href="/about">About</a>
+            <a href="mailto:kenny@agenthappy.dev">Contact</a>
+          </nav>
+        </div>
       </header>
 
-      <section className={styles.hero} aria-labelledby="hero-title">
-        <p className={styles.kicker}>Agentic AI, made practical</p>
-        <h1 id="hero-title">AI systems that move your business forward.</h1>
-        <p className={styles.introduction}>
-          We help leadership teams turn AI possibilities into durable workflows that work with the people, tools, and data they already have.
-        </p>
-        <a className={styles.contactButton} href="mailto:kenny@agenthappy.dev">
-          Start a conversation <span aria-hidden="true">↗</span>
-        </a>
-      </section>
+      <main id="top" className={styles.main}>
+        <section className="fold" aria-labelledby="hero-title">
+          <div className="hero">
+            <div className="hero-inner">
+              <div className="hero-copy reveal">
+                <h1 id="hero-title">
+                  AI training and implementation for corporate leadership <br />
+                  and management teams. Turn single-prompt chats, untracked <br />
+                  token usage, and AI hallucinations into multi-agent production workflows
+                </h1>
+                <div className="hero-actions" aria-label="Hero calls to action">
+                  <a className="btn" href="mailto:kenny@agenthappy.dev">JOIN THE WORKSHOP</a>
+                  <a className="btn btn-secondary" href="mailto:kenny@agenthappy.dev">START A PROJECT</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
-      <section className={styles.technologies} aria-label="Technologies we work with">
-        <p>Technologies we work with</p>
-        <div className={styles.logoGrid}>
-          {technologies.map(([src, alt, width]) => (
-            <Image key={src} src={src} alt={alt} width={width} height={48} />
-          ))}
-        </div>
-      </section>
-    </main>
+        <section className="logo-wall" aria-label="Technologies we work with">
+          <div className="logo-wall-inner">
+            <p className="eyebrow logo-wall-label">Technologies we work with</p>
+            <div className="logo-wall-grid">
+              <span className="logo-tile"><Image src="/images/logos/chatgpt-text.png" alt="OpenAI" width={150} height={48} /></span>
+              <span className="logo-tile"><Image src="/images/logos/claude-text.png" alt="Claude" width={150} height={48} /></span>
+              <span className="logo-tile"><Image src="/images/logos/gemini-text.png" alt="Gemini" width={150} height={48} /></span>
+              <span className="logo-tile"><Image src="/images/logos/wispr-text.png" alt="Wispr Flow" width={190} height={48} /></span>
+              <span className="logo-tile"><Image src="/images/logos/microsoft-text.png" alt="Microsoft" width={170} height={48} /></span>
+              <span className="logo-tile"><Image className="logo-image-preserve" src="/images/logos/glean-logo.png" alt="Glean" width={150} height={48} /></span>
+              <span className="logo-tile"><Image className="logo-image-preserve" src="/images/logos/langchain-logo.png" alt="LangChain" width={170} height={48} /></span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   );
 }
